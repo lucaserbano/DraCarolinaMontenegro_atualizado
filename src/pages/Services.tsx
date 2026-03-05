@@ -71,7 +71,7 @@ export default function Services() {
       <div className="bg-bordo py-40 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-serif mb-8 text-white"
@@ -86,11 +86,11 @@ export default function Services() {
 
       {/* Intro Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-         <div className="max-w-4xl mx-auto text-center">
-            <p className="text-2xl font-serif text-grafite leading-relaxed mb-12">
-              "A Cardiologia abrange o diagnóstico, tratamento e prevenção de doenças do coração e do sistema circulatório. Conheça as principais áreas em que atuo para cuidar da sua saúde cardiovascular."
-            </p>
-         </div>
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-2xl font-serif text-grafite leading-relaxed mb-12">
+            "A Cardiologia abrange o diagnóstico, tratamento e prevenção de doenças do coração e do sistema circulatório. Conheça as principais áreas em que atuo para cuidar da sua saúde cardiovascular."
+          </p>
+        </div>
       </div>
 
       {/* Services Cards */}
@@ -98,11 +98,10 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {services.map((service, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 className="bg-white p-12 rounded-lg border border-pearl hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
@@ -129,11 +128,10 @@ export default function Services() {
 
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 className="border border-pearl rounded-lg overflow-hidden bg-white"
               >
@@ -148,7 +146,7 @@ export default function Services() {
                     <ChevronDown className="text-grafite/40 w-5 h-5 shrink-0" />
                   )}
                 </button>
-                
+
                 <motion.div
                   initial={false}
                   animate={{ height: openFaq === index ? 'auto' : 0, opacity: openFaq === index ? 1 : 0 }}

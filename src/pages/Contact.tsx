@@ -1,5 +1,10 @@
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import photoContact from '../assets/images/foto para sobre.jpeg';
+import logoHUC from '../assets/Logo hospitais/2c446ea1-1830-4f46-bf4e-6644feb5bfb3-cajuru.png';
+import logoHMC from '../assets/Logo hospitais/logo_horiz_color-1024x343.png';
+import logoHUEM from '../assets/Logo hospitais/images-2.png';
+import logoCM from '../assets/logos/logo-bordo.png';
 
 export default function Contact() {
   return (
@@ -26,7 +31,7 @@ export default function Contact() {
                 <div>
                   <h3 className="text-xl font-serif text-grafite mb-3">Consultório Particular</h3>
                   <p className="text-grafite/70 font-light leading-relaxed mb-2">
-                    Rua Emiliano Perneta, 860, 17º andar, sala 1.701<br/>
+                    Rua Emiliano Perneta, 860, 17º andar, sala 1.701<br />
                     Centro, Curitiba - PR, 80010-050
                   </p>
                   <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
@@ -44,7 +49,7 @@ export default function Contact() {
                 <div>
                   <h3 className="text-xl font-serif text-grafite mb-3">Hospital Marcelino Champagnat</h3>
                   <p className="text-grafite/70 font-light leading-relaxed mb-2">
-                    Av. Presidente Affonso Camargo, 1399<br/>
+                    Av. Presidente Affonso Camargo, 1399<br />
                     Cristo Rei, Curitiba - PR, 80050-370
                   </p>
                   <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
@@ -61,7 +66,7 @@ export default function Contact() {
                 <div>
                   <h3 className="text-xl font-serif text-grafite mb-3">Hospital Universitário Cajuru</h3>
                   <p className="text-grafite/70 font-light leading-relaxed mb-2">
-                    Av. São José, 300<br/>
+                    Av. São José, 300<br />
                     Cristo Rei, Curitiba - PR, 80050-350
                   </p>
                   <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
@@ -78,7 +83,7 @@ export default function Contact() {
                 <div>
                   <h3 className="text-xl font-serif text-grafite mb-3">Hospital Universitário Evangélico Mackenzie</h3>
                   <p className="text-grafite/70 font-light leading-relaxed mb-2">
-                    Alameda Augusto Stellfeld, 1908<br/>
+                    Alameda Augusto Stellfeld, 1908<br />
                     Bigorrilho, Curitiba - PR, 80730-150
                   </p>
                   <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
@@ -98,42 +103,43 @@ export default function Contact() {
           >
             {/* Doctor Photo Placeholder */}
             <div className="aspect-[3/4] bg-pearl/20 rounded-lg overflow-hidden border border-pearl shadow-sm relative">
-               <img 
-                 src="https://picsum.photos/seed/doctor_contact/800/1000" 
-                 alt="Dra. Carolina Montenegro" 
-                 className="w-full h-full object-cover opacity-90"
-                 referrerPolicy="no-referrer"
-               />
-               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-bordo/80 to-transparent p-8">
-                  <p className="text-white font-serif text-xl">Dra. Carolina Montenegro</p>
-                  <p className="text-white/80 text-sm uppercase tracking-widest">Cardiologista</p>
-               </div>
+              <img
+                src={photoContact}
+                alt="Dra. Carolina Montenegro"
+                className="w-full h-full object-cover opacity-90"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-bordo/80 to-transparent p-8">
+                <p className="text-white font-serif text-xl">Dra. Carolina Montenegro</p>
+                <p className="text-white/80 text-sm uppercase tracking-widest">Cardiologista</p>
+              </div>
             </div>
 
             {/* Hospital Logos Placeholders */}
             <div className="grid grid-cols-2 gap-6">
-               <div className="h-24 bg-offwhite border border-pearl rounded flex items-center justify-center text-grafite/40 text-sm font-medium p-4 text-center">
-                  Logo Hospital Marcelino Champagnat
-               </div>
-               <div className="h-24 bg-offwhite border border-pearl rounded flex items-center justify-center text-grafite/40 text-sm font-medium p-4 text-center">
-                  Logo Hospital Cajuru
-               </div>
-               <div className="h-24 bg-offwhite border border-pearl rounded flex items-center justify-center text-grafite/40 text-sm font-medium p-4 text-center">
-                  Logo Hospital Evangélico
-               </div>
-               <div className="h-24 bg-offwhite border border-pearl rounded flex items-center justify-center text-grafite/40 text-sm font-medium p-4 text-center">
-                  Logo Consultório
-               </div>
+              <div className="h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-4 flex items-center justify-center">
+                <img src={logoHMC} alt="Hospital Marcelino Champagnat" className="max-h-full max-w-full object-contain" />
+              </div>
+              <div className="h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-4 flex items-center justify-center">
+                <img src={logoHUC} alt="Hospital Universitário Cajuru" className="max-h-full max-w-full object-contain" />
+              </div>
+              <div className="h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-4 flex items-center justify-center">
+                <img src={logoHUEM} alt="Hospital Universitário Evangélico Mackenzie" className="max-h-full max-w-full object-contain" />
+              </div>
+              <div className="h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-4 flex items-center justify-center">
+                <img src={logoCM} alt="Consultório Dra. Carolina Montenegro" className="max-h-[80%] max-w-full object-contain" />
+              </div>
             </div>
           </motion.div>
         </div>
 
         {/* Welcoming Phrase */}
         <div className="mt-32 text-center max-w-4xl mx-auto">
-           <div className="w-24 h-[1px] bg-bordo/20 mx-auto mb-10"></div>
-           <h2 className="text-3xl md:text-4xl font-serif text-bordo leading-tight italic">
-             "Cuidar do seu coração é a nossa missão. Aguardamos sua visita para juntos construirmos uma vida com mais saúde e bem-estar."
-           </h2>
+          <div className="w-24 h-[1px] bg-bordo/20 mx-auto mb-10"></div>
+          <h2 className="text-3xl md:text-4xl font-serif text-bordo leading-tight italic">
+            "Todo coração merece ser mais forte!<br />
+            Aguardo sua visita para melhorar a sua saúde e bem-estar."
+          </h2>
         </div>
       </div>
     </div>
