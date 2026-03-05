@@ -100,11 +100,12 @@ export default function Services() {
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white p-12 rounded-lg border border-pearl hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                viewport={{ once: true, amount: 0.1 }}
+                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)" }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="bg-white p-12 rounded-lg border border-pearl"
               >
                 <div className="w-16 h-16 bg-offwhite rounded-full flex items-center justify-center mb-8 shadow-sm text-bordo">
                   {service.icon}
@@ -133,8 +134,8 @@ export default function Services() {
                 key={index}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.3 }}
                 className="border border-pearl rounded-lg overflow-hidden bg-white"
               >
                 <button
