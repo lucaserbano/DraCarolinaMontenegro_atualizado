@@ -109,7 +109,7 @@ export default function Contact() {
                 className="w-full h-full object-cover opacity-90"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-bordo/80 to-transparent p-8">
+              <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-bordo/95 via-bordo/60 to-transparent p-8 flex flex-col justify-end">
                 <p className="text-white font-serif text-xl">Dra. Carolina Montenegro</p>
                 <p className="text-white/80 text-sm uppercase tracking-widest">Cardiologista</p>
               </div>
@@ -117,17 +117,17 @@ export default function Contact() {
 
             {/* Hospital Logos Placeholders */}
             <div className="grid grid-cols-2 gap-6">
-              <div className="h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-4 flex items-center justify-center">
+              <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-4 flex items-center justify-center">
                 <img src={logoHMC} alt="Hospital Marcelino Champagnat" className="max-h-full max-w-full object-contain" />
               </div>
-              <div className="h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-4 flex items-center justify-center">
+              <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-4 flex items-center justify-center">
                 <img src={logoHUC} alt="Hospital Universitário Cajuru" className="max-h-full max-w-full object-contain" />
               </div>
-              <div className="h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-4 flex items-center justify-center">
+              <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-4 flex items-center justify-center">
                 <img src={logoHUEM} alt="Hospital Universitário Evangélico Mackenzie" className="max-h-full max-w-full object-contain" />
               </div>
-              <div className="h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-4 flex items-center justify-center">
-                <img src={logoCM} alt="Consultório Dra. Carolina Montenegro" className="max-h-[80%] max-w-full object-contain" />
+              <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-4 flex items-center justify-center">
+                <img src={logoCM} alt="Consultório Dra. Carolina Montenegro" className="max-h-[70%] max-w-[90%] object-contain" />
               </div>
             </div>
           </motion.div>
