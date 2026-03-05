@@ -126,8 +126,8 @@ export default function Contact() {
               <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-4 flex items-center justify-center">
                 <img src={logoHUEM} alt="Hospital Universitário Evangélico Mackenzie" className="max-h-full max-w-full object-contain" />
               </div>
-              <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-4 flex items-center justify-center">
-                <img src={logoCM} alt="Consultório Dra. Carolina Montenegro" className="max-h-[70%] max-w-[90%] object-contain" />
+              <div className="h-20 md:h-28 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-6 flex items-center justify-center">
+                <img src={logoCM} alt="Consultório Dra. Carolina Montenegro" className="max-h-full max-w-full object-contain" />
               </div>
             </div>
           </motion.div>
@@ -136,9 +136,8 @@ export default function Contact() {
         {/* Welcoming Phrase */}
         <div className="mt-32 text-center max-w-4xl mx-auto">
           <div className="w-24 h-[1px] bg-bordo/20 mx-auto mb-10"></div>
-          <h2 className="text-3xl md:text-4xl font-serif text-bordo leading-tight italic">
-            "Todo coração merece ser mais forte!<br />
-            Aguardo sua visita para melhorar a sua saúde e bem-estar."
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-bordo leading-relaxed italic max-w-3xl mx-auto">
+            "Todo coração merece ser mais forte! Aguardo sua visita para melhorar a sua saúde e bem-estar."
           </h2>
         </div>
       </div>

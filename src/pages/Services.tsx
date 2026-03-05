@@ -101,8 +101,9 @@ export default function Services() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="bg-white p-12 rounded-lg border border-pearl hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="w-16 h-16 bg-offwhite rounded-full flex items-center justify-center mb-8 shadow-sm text-bordo">
@@ -131,8 +132,9 @@ export default function Services() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="border border-pearl rounded-lg overflow-hidden bg-white"
               >
                 <button
