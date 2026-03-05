@@ -126,8 +126,12 @@ export default function Contact() {
               <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-4 flex items-center justify-center">
                 <img src={logoHUEM} alt="Hospital Universitário Evangélico Mackenzie" className="max-h-full max-w-full object-contain" />
               </div>
-              <div className="h-20 md:h-28 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-6 flex items-center justify-center">
-                <img src={logoCM} alt="Consultório Dra. Carolina Montenegro" className="max-h-full max-w-full object-contain" />
+              <div className="h-24 md:h-32 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-4 md:p-6 flex items-center justify-center overflow-hidden">
+                <img
+                  src={logoCM}
+                  alt="Consultório Dra. Carolina Montenegro"
+                  className="h-full w-auto object-contain max-w-full"
+                />
               </div>
             </div>
           </motion.div>
