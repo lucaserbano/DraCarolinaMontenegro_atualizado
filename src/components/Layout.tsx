@@ -22,7 +22,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   // Close mobile menu and restore scroll on route change
   useEffect(() => {
     setIsOpen(false);
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   }, [location.pathname]);
 
   const navLinks = [

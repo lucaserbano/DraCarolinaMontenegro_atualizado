@@ -43,9 +43,9 @@ export default function About() {
           >
             Sobre a Dra. Carolina
           </motion.h1>
-          <p className="text-xl text-grafite/70 font-light leading-relaxed max-w-2xl mx-auto">
-            Dedicação à Cardiologia de alta complexidade,<br />
-            unindo o uso da ciência ao atendimento acessível.
+          <p className="text-lg sm:text-xl text-grafite/70 font-light leading-relaxed max-w-2xl sm:mx-auto text-justify sm:text-center">
+            Dedicação à Cardiologia de alta complexidade,<br className="hidden sm:block" />
+            {' '}unindo o uso da ciência ao atendimento acessível.
           </p>
         </div>
       </div>
