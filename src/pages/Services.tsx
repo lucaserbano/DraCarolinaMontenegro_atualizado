@@ -1,6 +1,6 @@
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Heart, Activity, ChevronDown, ChevronUp, Stethoscope, ClipboardCheck, Cpu, UserCheck } from 'lucide-react';
-import { useState } from 'react';
 
 export default function Services() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -9,26 +9,42 @@ export default function Services() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const faqs = [
+  const faqs: { question: string; answer: React.ReactNode }[] = [
     {
-      question: "O que é Insuficiência Cardíaca?",
-      answer: "A Insuficiência Cardíaca (IC) é uma condição em que o coração não consegue bombear sangue suficiente para atender às necessidades do corpo. Isso pode causar sintomas como falta de ar, fadiga e inchaço nas pernas. O tratamento adequado é fundamental para melhorar a qualidade de vida e a sobrevida do paciente."
+      question: "Quais condições cardíacas você trata?",
+      answer: "Atendo pacientes com diversas condições cardiovasculares, como insuficiência cardíaca, cardiomiopatias, hipertensão arterial, arritmias, doença coronariana e valvopatias. Tenho formação avançada em insuficiência cardíaca e transplante cardíaco, o que me permite acompanhar casos de maior complexidade."
     },
     {
-      question: "Quais são os sintomas de Insuficiência Cardíaca?",
-      answer: "Os sintomas mais comuns incluem falta de ar (especialmente ao deitar ou realizar esforços), cansaço excessivo, inchaço nos pés, tornozelos e pernas, ganho de peso rápido (devido à retenção de líquidos) e tosse persistente."
+      question: "O que é Insuficiência Cardíaca e quais são os sintomas?",
+      answer: "Insuficiência cardíaca é uma condição em que o coração perde a capacidade de bombear sangue de forma eficiente para o organismo. Os sintomas mais comuns são falta de ar — especialmente aos esforços ou ao deitar —, inchaço nas pernas, cansaço excessivo e dificuldade para realizar atividades do dia a dia. O diagnóstico precoce e o acompanhamento especializado são fundamentais para controlar a doença e preservar a qualidade de vida."
     },
     {
-      question: "Quando é indicado um Transplante Cardíaco?",
-      answer: "O transplante cardíaco é indicado para pacientes com Insuficiência Cardíaca avançada que não respondem mais ao tratamento clínico otimizado e que não possuem outras opções cirúrgicas viáveis. É uma decisão complexa tomada por uma equipe multidisciplinar após avaliação rigorosa."
+      question: "Quando devo procurar um cardiologista?",
+      answer: "Recomendo consultar um cardiologista se você apresenta sintomas como falta de ar, dor ou pressão no peito, palpitações, tontura ou inchaço nas pernas. Também é importante buscar avaliação se você tem fatores de risco como hipertensão, diabetes, colesterol elevado, histórico familiar de doença cardíaca ou sedentarismo — mesmo sem sintomas."
     },
     {
       question: "Como funciona uma primeira consulta?",
-      answer: "Na primeira consulta, realizamos uma avaliação completa do histórico médico, exame físico detalhado e análise de exames anteriores. O objetivo é entender a condição atual do coração, ajustar medicações se necessário e traçar um plano de tratamento personalizado."
+      answer: "A primeira consulta tem duração de 60 minutos e é estruturada para oferecer uma avaliação completa e individualizada. Inclui investigação das queixas, histórico médico, uso de medicamentos e hábitos de vida, exame físico cardiovascular, análise dos exames disponíveis e recomendações baseadas nas diretrizes médicas mais atuais, sempre adaptadas à realidade e aos objetivos de cada paciente."
+    },
+    {
+      question: "Quais exames devo levar na primeira consulta?",
+      answer: "Traga todos os exames que você já realizou, especialmente eletrocardiogramas, ecocardiogramas, exames de sangue recentes e laudos de outros especialistas. Não se preocupe caso não tenha nenhum — a avaliação clínica já é suficiente para começarmos e, se necessário, solicitarei os exames durante a consulta."
+    },
+    {
+      question: "Quais exames são feitos no acompanhamento cardiológico?",
+      answer: "Os exames variam conforme a condição de cada paciente. Os mais utilizados no acompanhamento são eletrocardiograma, ecocardiograma, exames de sangue, teste ergométrico e holter. Em casos mais complexos, podem ser indicados exames como ressonância cardíaca ou cateterismo. Tudo é solicitado de forma individualizada, conforme a necessidade clínica."
+    },
+    {
+      question: "Você atende por convênio ou particular?",
+      answer: "Atendo tanto por convênio quanto de forma particular. As consultas particulares são realizadas no consultório, e os atendimentos por convênio pelo Hospital São Marcelino Champagnat. Para verificar se o seu plano é aceito, entre em contato antes de agendar."
+    },
+    {
+      question: "Você realiza teleconsulta?",
+      answer: (<span>Sim, ofereço atendimento por teleconsulta para pacientes que preferem consultar à distância, seja na primeira consulta ou no retorno. O agendamento é feito pelo telefone <a href="tel:+554198889-2856" className="text-bordo hover:underline font-medium">(41) 98889-2856</a>.</span>)
     },
     {
       question: "Como faço para marcar uma consulta?",
-      answer: "Você pode agendar uma consulta diretamente pelo consultório particular, pelo telefone (41) 3082-0069 ou WhatsApp (41) 98421-6135. Também atendo no Hospital Marcelino Champagnat, pelo telefone (41) 3087-7600."
+      answer: (<span>Você pode agendar sua consulta pelo telefone <a href="tel:+554130820069" className="text-bordo hover:underline font-medium">(41) 3082-0069</a> ou pelo WhatsApp <a href="https://wa.me/5541984216135?text=Ol%C3%A1!%20Vim%20a%20partir%20do%20site%20da%20Dra.%20Carolina%20Montenegro.%20Gostaria%20de%20marcar%20uma%20consulta!" target="_blank" rel="noopener noreferrer" className="text-bordo hover:underline font-medium">(41) 98421-6135</a>. Para atendimentos por convênio, o agendamento é feito diretamente pelo Hospital Marcelino Champagnat, pelo telefone <a href="tel:+554130877600" className="text-bordo hover:underline font-medium">(41) 3087-7600</a>.</span>)
     }
   ];
 
@@ -85,11 +101,21 @@ export default function Services() {
       </div>
 
       {/* Intro Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-2xl font-serif text-grafite leading-relaxed mb-12">
-            "A Cardiologia abrange o diagnóstico, tratamento e prevenção de doenças do coração e do sistema circulatório. Conheça as principais áreas em que atuo para cuidar da sua saúde cardiovascular."
-          </p>
+      <div className="relative overflow-hidden bg-gradient-to-b from-white via-white to-offwhite">
+        {/* Aspas marca d'água */}
+        <div
+          aria-hidden="true"
+          className="absolute left-0 top-1/2 -translate-y-1/2 select-none pointer-events-none"
+          style={{ fontSize: '32rem', lineHeight: 1, color: '#590016', opacity: 0.04, fontFamily: 'Georgia, serif', userSelect: 'none' }}
+        >
+          &#8220;
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-3xl md:text-4xl font-serif text-bordo leading-relaxed mb-12 font-medium">
+              A Cardiologia abrange o diagnóstico, tratamento e prevenção de doenças do coração e do sistema circulatório. Conheça as principais áreas em que atuo para cuidar da sua saúde cardiovascular.
+            </p>
+          </div>
         </div>
       </div>
 

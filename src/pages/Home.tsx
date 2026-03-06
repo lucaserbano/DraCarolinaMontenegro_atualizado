@@ -1,33 +1,24 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Heart, Activity, Clock } from 'lucide-react';
+import { ArrowRight, Heart, Activity, Clock, Monitor } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroImg from '../assets/images/foto para hero2.jpeg';
 import secondSectionImg from '../assets/images/WhatsApp Image 2026-03-03 at 14.10.59.jpeg';
+import logoBordo from '../assets/logos/logo-bordo.png';
 import { CONSULTORIO, HOSPITALS } from '../data/locations';
 
 export default function Home() {
   return (
     <div className="bg-offwhite">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden py-40 lg:py-48">
-        {/* Background Elements */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-offwhite via-white to-pearl opacity-80"></div>
-          <div className="absolute top-0 right-0 w-2/3 h-full bg-[#fcfbfb] -skew-x-12 translate-x-1/3"></div>
-          {/* Subtle dot grid */}
-          <div className="absolute inset-0 opacity-[0.06]">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <pattern id="hero-dots" width="28" height="28" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1.5" fill="#6B0020" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#hero-dots)" />
-            </svg>
-          </div>
-          {/* Decorative orbs */}
-          <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-bordo/8 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-champagne/30 rounded-full blur-3xl"></div>
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden py-40 lg:py-48 bg-offwhite">
+        {/* Logo watermark */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+          <img
+            src={logoBordo}
+            alt=""
+            aria-hidden="true"
+            className="h-[85%] w-auto object-contain opacity-[0.055] select-none"
+          />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -61,7 +52,7 @@ export default function Home() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-bordo/10">
-                  <p className="text-xs text-grafite/40 font-light leading-relaxed tracking-wide">
+                  <p className="text-sm text-grafite/40 font-light leading-relaxed tracking-wide">
                     Dra. Carolina Montenegro &nbsp;·&nbsp; CRM-PR 45316<br />
                     Clínica Médica – RQE Nº: 32336 &nbsp;·&nbsp; Cardiologia – RQE Nº: 36066
                   </p>
@@ -291,9 +282,9 @@ export default function Home() {
             <div className="w-20 h-[1px] bg-white/30 mx-auto"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-10 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 lg:gap-6 mb-20">
             {/* Consultório */}
-            <div className="bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors">
+            <div className="bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors min-h-[220px]">
               <h3 className="text-xl font-serif mb-4 text-champagne">{CONSULTORIO.name}</h3>
               <p className="text-white/80 font-light text-sm leading-relaxed mb-4">
                 {CONSULTORIO.street}<br />
@@ -308,7 +299,7 @@ export default function Home() {
 
             {/* Hospitals */}
             {HOSPITALS.map(hospital => (
-              <div key={hospital.id} className="bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors">
+              <div key={hospital.id} className="bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors min-h-[220px]">
                 <h3 className="text-xl font-serif mb-4 text-champagne">{hospital.name}</h3>
                 <p className="text-white/80 font-light text-sm leading-relaxed mb-4">
                   {hospital.street}<br />
@@ -319,10 +310,24 @@ export default function Home() {
                   {hospital.showPhone && (
                     <a href={hospital.phoneTel} className="hover:text-champagne transition-colors">Tel: {hospital.phone}</a>
                   )}
-                  <a href={hospital.website} target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-champagne transition-colors font-light text-xs">{hospital.website.replace('https://', '')}</a>
+                  <a href={hospital.website} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-champagne transition-colors font-light text-sm">{hospital.website.replace('https://', '')}</a>
                 </div>
               </div>
             ))}
+
+            {/* Teleconsulta */}
+            <div className="bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors min-h-[220px]">
+              <div className="flex items-center gap-3 mb-4">
+                <Monitor className="w-5 h-5 text-champagne shrink-0" />
+                <h3 className="text-xl font-serif text-champagne">Teleconsulta</h3>
+              </div>
+              <p className="text-white/80 font-light text-sm leading-relaxed mb-4">
+                Atendo por teleconsulta pacientes de todo o Brasil e exterior.
+              </p>
+              <div className="text-sm text-white/90 font-medium">
+                <a href="tel:+554198889-2856" className="block hover:text-champagne transition-colors">(41) 98889-2856</a>
+              </div>
+            </div>
           </div>
 
           <div className="text-center">

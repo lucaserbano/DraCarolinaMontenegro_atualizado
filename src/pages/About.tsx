@@ -58,18 +58,18 @@ export default function About() {
             animate={{ opacity: 1, x: 0 }}
             className="prose prose-lg prose-slate text-grafite/80 font-light flex flex-col items-start text-left justify-center mx-auto"
           >
-            <h2 className="text-3xl font-serif text-bordo mb-6 text-left">Trajetória Profissional</h2>
+            <h2 className="text-3xl font-serif text-bordo mb-6 text-center w-full">Trajetória Profissional</h2>
             <p className="mb-6 text-justify">
               Costumo brincar que escolhi a Insuficiência Cardíaca antes mesmo de ter escolhido a Cardiologia. Foi durante uma aula de fisiopatologia, ainda na graduação em Medicina pela Pontifícia Universidade Católica do Paraná, que algo se encaixou de um jeito que nunca mais se desfez: eu sabia, ali, qual seria o meu caminho.
             </p>
             <p className="mb-6 text-justify">
-              Formada em 2020, construí minha base clínica na residência de Clínica Médica na Santa Casa de Curitiba, onde aprendi a enxergar o paciente como um todo. Em seguida, aprofundei-me na Cardiologia pelo Hospital de Clínicas da Universidade Federal do Paraná, referência nacional no ensino e na assistência. Mas foi ao ingressar na especialização em Insuficiência Cardíaca Avançada, Dispositivos de Assistência Ventricular e Transplante Cardíaco no InCor, o Instituto do Coração de São Paulo, o maior centro de cardiologia da América Latina, que minha formação ganhou o nível de excelência que sempre busquei.
+              Formada em 2020, construí minha base clínica na residência de Clínica Médica na Santa Casa de Curitiba, onde aprendi a enxergar o paciente como um todo. Em seguida, aprofundei-me na Cardiologia pelo Hospital de Clínicas da Universidade Federal do Paraná, referência nacional no ensino e na assistência. Mas foi ao ingressar na especialização em Insuficiência Cardíaca Avançada, Dispositivos de Assistência Ventricular e Transplante Cardíaco no InCor, o Instituto do Coração de São Paulo, um dos maiores centros de cardiologia da América Latina, que minha formação ganhou o nível de excelência que sempre busquei.
             </p>
             <p className="mb-6 text-justify">
               Para ir ainda mais longe, realizei um <em>Clinical Observership</em> no Baylor Scott &amp; White Health, em Dallas, Texas, no departamento dedicado exclusivamente a insuficiência cardíaca avançada, transplante cardíaco e suporte circulatório mecânico. Estar em contato com o que existe de mais avançado no mundo nessa área reforçou em mim não apenas o conhecimento técnico, mas a certeza de que meus pacientes merecem o mesmo padrão de cuidado, aqui, em Curitiba.
             </p>
             <p className="text-justify">
-              Hoje, atendo em consultório próprio e integro a equipe do Hospital Evangélico Mackenzie de Curitiba. Trago comigo tudo o que vivi nos centros onde me formei, mas o que realmente orienta minha prática é mais simples do que qualquer currículo: minha abordagem é marcada pela clareza na comunicação, pela acessibilidade e, sobretudo, por lutar pela vida de cada paciente até quando for possível. Em uma especialidade que frequentemente lida com situações de alta complexidade e prognóstico incerto, isso significa estar presente em cada etapa, seja na busca pelo melhor tratamento disponível, seja no cuidado e no acolhimento quando o caminho pede isso.
+              Hoje, atendo em consultório próprio e integro as equipes do Hospital São Marcelino Champagnat, do Hospital Universitário Cajuru e do Hospital Universitário Evangélico Mackenzie. Trago comigo tudo o que vivi nos centros onde me formei, mas o que realmente orienta minha prática é mais simples do que qualquer currículo: clareza na comunicação, atenção individualizada e o compromisso genuíno com o bem-estar de cada paciente.
             </p>
 
             <div className="mt-10 pt-8 border-t border-pearl w-full flex justify-center">

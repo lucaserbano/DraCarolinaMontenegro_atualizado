@@ -106,15 +106,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Footer */}
       <footer className="bg-grafite text-pearl py-16 border-t border-champagne/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 max-w-5xl mx-auto">
 
             {/* Brand / Logo */}
             <div className="space-y-6 flex flex-col items-start">
               <img src={carimboBranco} alt="Dra. Carolina Montenegro" className="h-24 md:h-32 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity" />
               <p className="text-sm text-pearl/80 leading-relaxed max-w-xs font-light">
-                Atendimento cardiológico especializado em Insuficiência Cardíaca e Transplante Cardíaco. Excelência técnica e sensibilidade.
+                Cardiologia especializada. Excelência técnica e sensibilidade.
               </p>
-              <p className="text-xs text-pearl/40 leading-relaxed font-light mt-2">
+              <p className="text-sm text-pearl/40 leading-relaxed font-light mt-2">
                 CRM-PR 45316<br />
                 Clínica Médica – RQE Nº: 32336<br />
                 Cardiologia – RQE Nº: 36066
