@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import heroImg from '../assets/images/foto para hero2.jpeg';
 import secondSectionImg from '../assets/images/WhatsApp Image 2026-03-03 at 14.10.59.jpeg';
 import logoBordo from '../assets/logos/logo-bordo.png';
-import { CONSULTORIO, HOSPITALS } from '../data/locations';
+import { CONSULTORIO, HOSPITALS, TELECONSULTA_WA } from '../data/locations';
 
 export default function Home() {
   return (
@@ -16,6 +16,14 @@ export default function Home() {
           <div className="absolute inset-y-0 right-0 w-[55%] bg-gradient-to-l from-pearl/30 via-pearl/10 to-transparent"></div>
           <div className="absolute inset-y-0 right-[44.5%] w-[1px] bg-gradient-to-b from-transparent via-bordo/8 to-transparent hidden lg:block"></div>
         </div>
+        {/* Noise texture */}
+        <svg className="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg">
+          <filter id="hero-noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+            <feColorMatrix type="saturate" values="0"/>
+          </filter>
+          <rect width="100%" height="100%" filter="url(#hero-noise)"/>
+        </svg>
         {/* Logo watermark */}
         <div className="absolute inset-0 z-0 flex items-center justify-end pr-8 pointer-events-none">
           <img
@@ -320,7 +328,7 @@ export default function Home() {
                 Atendimento por teleconsulta para pacientes do Brasil e exterior.
               </p>
               <div className="text-sm text-white/90 font-medium">
-                <a href="tel:+554198889-2856" className="block hover:text-champagne transition-colors">Tel: (41) 98889-2856</a>
+                <a href={TELECONSULTA_WA.whatsappUrl} target="_blank" rel="noopener noreferrer" className="block hover:text-champagne transition-colors">WhatsApp: {TELECONSULTA_WA.phone}</a>
               </div>
             </div>
           </div>

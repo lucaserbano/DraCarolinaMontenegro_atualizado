@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { TELECONSULTA_WA } from '../data/locations';
 import { motion } from 'motion/react';
 import { Heart, Activity, ChevronDown, ChevronUp, Stethoscope, ClipboardCheck, Cpu, UserCheck } from 'lucide-react';
 import logoBordo from '../assets/logos/logo-bordo.png';
@@ -41,11 +42,11 @@ export default function Services() {
     },
     {
       question: "Você realiza teleconsulta?",
-      answer: (<span>Sim, ofereço atendimento por teleconsulta para pacientes que preferem consultar à distância, seja na primeira consulta ou no retorno. O agendamento é feito pelo telefone <a href="tel:+554198889-2856" className="text-bordo hover:underline font-medium">(41) 98889-2856</a>.</span>)
+      answer: (<span>Sim, ofereço atendimento por teleconsulta para pacientes que preferem consultar à distância, seja na primeira consulta ou no retorno. O agendamento é feito pelo WhatsApp <a href={TELECONSULTA_WA.whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-bordo hover:underline font-medium">{TELECONSULTA_WA.phone}</a>.</span>)
     },
     {
       question: "Como faço para marcar uma consulta?",
-      answer: (<span>Você pode agendar sua consulta pelo telefone <a href="tel:+554130820069" className="text-bordo hover:underline font-medium">(41) 3082-0069</a> ou pelo WhatsApp <a href="https://wa.me/5541984216135?text=Ol%C3%A1!%20Vim%20a%20partir%20do%20site%20da%20Dra.%20Carolina%20Montenegro.%20Gostaria%20de%20marcar%20uma%20consulta!" target="_blank" rel="noopener noreferrer" className="text-bordo hover:underline font-medium">(41) 98421-6135</a>. Para atendimentos por convênio, o agendamento é feito diretamente pelo Hospital São Marcelino Champagnat, pelo telefone <a href="tel:+554130877600" className="text-bordo hover:underline font-medium">(41) 3087-7600</a>.</span>)
+      answer: (<span>Você pode agendar sua consulta pelo telefone <a href="tel:+554130820069" className="text-bordo hover:underline font-medium">(41) 3082-0069</a> ou pelo WhatsApp <a href="https://wa.me/5541984216135?text=Ol%C3%A1!%20Vim%20a%20partir%20do%20site%20da%20Dra.%20Carolina%20Montenegro.%20Gostaria%20de%20marcar%20uma%20consulta!" target="_blank" rel="noopener noreferrer" className="text-bordo hover:underline font-medium">(41) 98421-6135</a>. Para atendimentos por convênio, o agendamento é feito diretamente pelo Hospital São Marcelino Champagnat pelo WhatsApp <a href="https://wa.me/554130877600?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Dra.%20Carolina%20Montenegro.%20Gostaria%20de%20marcar%20uma%20consulta." target="_blank" rel="noopener noreferrer" className="text-bordo hover:underline font-medium">(41) 3087-7600</a>.</span>)
     }
   ];
 
@@ -85,7 +86,7 @@ export default function Services() {
   return (
     <div className="bg-white">
       {/* Header */}
-      <div className="bg-bordo py-40 text-white relative overflow-hidden">
+      <div className="bg-gradient-to-b from-[#8B0025] via-bordo to-[#3D000F] py-40 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.h1
@@ -106,16 +107,16 @@ export default function Services() {
         {/* Aspas de abertura — marca d'água esquerda */}
         <div
           aria-hidden="true"
-          className="absolute left-0 top-0 select-none pointer-events-none"
-          style={{ fontSize: '32rem', lineHeight: 1, color: '#590016', opacity: 0.04, fontFamily: 'Georgia, serif', userSelect: 'none' }}
+          className="absolute left-0 top-0 select-none pointer-events-none z-[11]"
+          style={{ fontSize: '32rem', lineHeight: 1, color: '#590016', opacity: 0.06, fontFamily: 'Georgia, serif', userSelect: 'none' }}
         >
           &#8220;
         </div>
         {/* Aspas de fechamento — marca d'água direita */}
         <div
           aria-hidden="true"
-          className="absolute right-0 bottom-0 translate-y-1/4 select-none pointer-events-none"
-          style={{ fontSize: '32rem', lineHeight: 1, color: '#590016', opacity: 0.04, fontFamily: 'Georgia, serif', userSelect: 'none' }}
+          className="absolute right-0 bottom-0 translate-y-1/4 select-none pointer-events-none z-[11]"
+          style={{ fontSize: '32rem', lineHeight: 1, color: '#590016', opacity: 0.06, fontFamily: 'Georgia, serif', userSelect: 'none' }}
         >
           &#8221;
         </div>
@@ -123,9 +124,12 @@ export default function Services() {
         {/* Intro título */}
         <div className="bg-gradient-to-b from-white to-offwhite relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-            <div className="max-w-4xl mx-auto text-left">
-              <p className="text-3xl md:text-4xl font-serif text-bordo leading-relaxed font-medium italic">
-                A Cardiologia abrange o diagnóstico, tratamento e prevenção de doenças do coração e do sistema circulatório. Conheça as principais áreas em que atuo para cuidar da sua saúde cardiovascular.
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-3xl md:text-4xl font-serif text-bordo leading-relaxed font-medium italic mb-6">
+                A Cardiologia abrange o diagnóstico, tratamento e prevenção de doenças do coração e do sistema circulatório.
+              </p>
+              <p className="text-lg md:text-xl font-serif text-grafite/60 font-light italic">
+                Conheça as principais áreas em que atuo para cuidar da sua saúde cardiovascular.
               </p>
             </div>
           </div>
