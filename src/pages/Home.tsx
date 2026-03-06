@@ -106,7 +106,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative py-24 lg:py-32 bg-white overflow-hidden text-grafite">
+      <section className="relative py-40 lg:py-48 bg-white overflow-hidden text-grafite">
         {/* Background Image that covers the left half */}
         <div className="absolute inset-0 md:w-[60%] h-1/2 md:h-full z-0">
           <img
