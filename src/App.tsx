@@ -12,8 +12,6 @@ import Contact from './pages/Contact';
 
 export default function App() {
   const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
-  console.log('Normalized Basename:', basename);
-  console.log('Current Pathname:', window.location.pathname);
 
   return (
     <Router basename={basename}>

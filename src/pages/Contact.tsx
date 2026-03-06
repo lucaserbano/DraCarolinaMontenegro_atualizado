@@ -1,10 +1,17 @@
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Phone, MapPin } from 'lucide-react';
 import photoContact from '../assets/images/foto para sobre.jpeg';
 import logoHUC from '../assets/Logo hospitais/2c446ea1-1830-4f46-bf4e-6644feb5bfb3-cajuru.png';
 import logoHMC from '../assets/Logo hospitais/logo_horiz_color-1024x343.png';
 import logoHUEM from '../assets/Logo hospitais/images-2.png';
 import logoCM from '../assets/logos/logo-bordo.png';
+import { CONSULTORIO, HOSPITALS } from '../data/locations';
+
+const hospitalLogos: Record<string, string> = {
+  hmc: logoHMC,
+  huc: logoHUC,
+  huem: logoHUEM,
+};
 
 export default function Contact() {
   return (
@@ -29,85 +36,58 @@ export default function Contact() {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-serif text-grafite mb-3">Consultório Particular</h3>
+                  <h3 className="text-xl font-serif text-grafite mb-3">{CONSULTORIO.name}</h3>
                   <p className="text-grafite/70 font-light leading-relaxed mb-2">
-                    Rua Emiliano Perneta, 860, 17º andar, sala 1.701<br />
-                    Centro, Curitiba - PR, 80010-050
+                    {CONSULTORIO.street}<br />
+                    {CONSULTORIO.city}, {CONSULTORIO.cep}
                   </p>
                   <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
-                    <span className="flex items-center gap-2"><Phone size={16} /> (41) 3082-0069</span>
-                    <span className="flex items-center gap-2"><Phone size={16} /> WhatsApp: (41) 98421-6135</span>
+                    <a href={CONSULTORIO.phoneTel} className="flex items-center gap-2 hover:text-bordo transition-colors">
+                      <Phone size={16} /> {CONSULTORIO.phone}
+                    </a>
+                    <a href={CONSULTORIO.whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-bordo transition-colors">
+                      <Phone size={16} /> WhatsApp: {CONSULTORIO.whatsappPhone}
+                    </a>
                   </div>
                 </div>
               </div>
 
-              {/* Hospital Marcelino Champagnat */}
-              <div className="flex items-start gap-6 group">
-                <div className="w-14 h-14 bg-offwhite rounded-full flex items-center justify-center flex-shrink-0 text-bordo border border-pearl group-hover:border-bordo transition-colors">
-                  <div className="text-xs font-bold">HMC</div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif text-grafite mb-3">Hospital Marcelino Champagnat</h3>
-                  <p className="text-grafite/70 font-light leading-relaxed mb-2">
-                    Av. Presidente Affonso Camargo, 1399<br />
-                    Cristo Rei, Curitiba - PR, 80050-370
-                  </p>
-                  <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
-                    <span className="flex items-center gap-2"><Phone size={16} /> (41) 3087-7600</span>
+              {/* Hospitals */}
+              {HOSPITALS.map(hospital => (
+                <div key={hospital.id} className="flex items-start gap-6 group">
+                  <div className="w-14 h-14 bg-offwhite rounded-full flex items-center justify-center flex-shrink-0 text-bordo border border-pearl group-hover:border-bordo transition-colors">
+                    <div className="text-xs font-bold">{hospital.abbr}</div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-serif text-grafite mb-3">{hospital.name}</h3>
+                    <p className="text-grafite/70 font-light leading-relaxed mb-2">
+                      {hospital.street}<br />
+                      {hospital.city}, {hospital.cep}
+                    </p>
+                    <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
+                      <a href={hospital.phoneTel} className="flex items-center gap-2 hover:text-bordo transition-colors">
+                        <Phone size={16} /> {hospital.phone}
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Hospital Universitário Cajuru */}
-              <div className="flex items-start gap-6 group">
-                <div className="w-14 h-14 bg-offwhite rounded-full flex items-center justify-center flex-shrink-0 text-bordo border border-pearl group-hover:border-bordo transition-colors">
-                  <div className="text-xs font-bold">HUC</div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif text-grafite mb-3">Hospital Universitário Cajuru</h3>
-                  <p className="text-grafite/70 font-light leading-relaxed mb-2">
-                    Av. São José, 300<br />
-                    Cristo Rei, Curitiba - PR, 80050-350
-                  </p>
-                  <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
-                    <span className="flex items-center gap-2"><Phone size={16} /> (41) 3271-3000</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Hospital Universitário Evangélico Mackenzie */}
-              <div className="flex items-start gap-6 group">
-                <div className="w-14 h-14 bg-offwhite rounded-full flex items-center justify-center flex-shrink-0 text-bordo border border-pearl group-hover:border-bordo transition-colors">
-                  <div className="text-xs font-bold">HUEM</div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif text-grafite mb-3">Hospital Universitário Evangélico Mackenzie</h3>
-                  <p className="text-grafite/70 font-light leading-relaxed mb-2">
-                    Alameda Augusto Stellfeld, 1908<br />
-                    Bigorrilho, Curitiba - PR, 80730-150
-                  </p>
-                  <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
-                    <span className="flex items-center gap-2"><Phone size={16} /> (41) 3240-5000</span>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </motion.div>
 
-          {/* Photo Placeholder & Logos */}
+          {/* Photo & Logos */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-12"
           >
-            {/* Doctor Photo Placeholder */}
+            {/* Doctor Photo */}
             <div className="aspect-[3/4] bg-pearl/20 rounded-lg overflow-hidden border border-pearl shadow-sm relative">
               <img
                 src={photoContact}
                 alt="Dra. Carolina Montenegro"
                 className="w-full h-full object-cover opacity-90"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-bordo/95 via-bordo/60 to-transparent p-8 flex flex-col justify-end">
                 <p className="text-white font-serif text-xl">Dra. Carolina Montenegro</p>
@@ -115,17 +95,13 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Hospital Logos Placeholders */}
+            {/* Hospital Logos */}
             <div className="grid grid-cols-2 gap-6">
-              <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-4 flex items-center justify-center">
-                <img src={logoHMC} alt="Hospital Marcelino Champagnat" className="max-h-full max-w-full object-contain" />
-              </div>
-              <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-4 flex items-center justify-center">
-                <img src={logoHUC} alt="Hospital Universitário Cajuru" className="max-h-full max-w-full object-contain" />
-              </div>
-              <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-4 flex items-center justify-center">
-                <img src={logoHUEM} alt="Hospital Universitário Evangélico Mackenzie" className="max-h-full max-w-full object-contain" />
-              </div>
+              {HOSPITALS.map(hospital => (
+                <div key={hospital.id} className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-4 flex items-center justify-center">
+                  <img src={hospitalLogos[hospital.id]} alt={hospital.name} className="max-h-full max-w-full object-contain" />
+                </div>
+              ))}
               <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 flex items-center justify-center overflow-hidden">
                 <img
                   src={logoCM}

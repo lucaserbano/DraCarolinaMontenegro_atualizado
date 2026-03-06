@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'motion/react';
-import { Menu, X, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Menu, X, Instagram, Phone, MapPin } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import logoBordoHorizontal from '../assets/logos/logo-bordo-horizontal.png';
 import carimboBranco from '../assets/logos/carimbo-branco.png';
+import { CONSULTORIO, HOSPITALS } from '../data/locations';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-pearl shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20 items-center">
-            {/* Logo Placeholder */}
+            {/* Logo */}
             <Link to="/" className="flex-shrink-0 flex items-center gap-3 group">
               <img src={logoBordoHorizontal} alt="Dra. Carolina Montenegro" className="h-10 md:h-12 w-auto object-contain" />
             </Link>
@@ -60,6 +61,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setIsOpen(!isOpen)}
+                aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
                 className="text-grafite hover:text-bordo focus:outline-none transition-colors"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -69,29 +71,31 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         {/* Mobile Menu Dropdown */}
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-pearl overflow-hidden"
-          >
-            <div className="px-4 pt-4 pb-6 space-y-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`block px-4 py-3 rounded-lg text-base font-medium uppercase tracking-wider transition-colors ${location.pathname === link.path
-                    ? 'bg-offwhite text-bordo'
-                    : 'text-grafite hover:text-bordo hover:bg-offwhite'
-                    }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden bg-white border-b border-pearl overflow-hidden"
+            >
+              <div className="px-4 pt-4 pb-6 space-y-2">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`block px-4 py-3 rounded-lg text-base font-medium uppercase tracking-wider transition-colors ${location.pathname === link.path
+                      ? 'bg-offwhite text-bordo'
+                      : 'text-grafite hover:text-bordo hover:bg-offwhite'
+                      }`}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Main Content */}
@@ -123,13 +127,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     Rua Emiliano Perneta, 860, 17º andar<br />
                     Centro, Curitiba - PR
                     <div className="mt-3 flex flex-col gap-2">
-                      <a href="tel:+554130820069" className="flex items-center gap-2 hover:text-champagne transition-colors">
+                      <a href={CONSULTORIO.phoneTel} className="flex items-center gap-2 hover:text-champagne transition-colors">
                         <Phone size={14} className="text-champagne shrink-0" />
-                        <span>(41) 3082-0069</span>
+                        <span>{CONSULTORIO.phone}</span>
                       </a>
-                      <a href="https://wa.me/5541984216135?text=Ol%C3%A1!%20Vim%20a%20partir%20do%20site%20da%20Dra.%20Carolina%20Montenegro.%20Gostaria%20de%20marcar%20uma%20consulta!" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-champagne transition-colors">
+                      <a href={CONSULTORIO.whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-champagne transition-colors">
                         <Phone size={14} className="text-champagne shrink-0" />
-                        <span>(41) 98421-6135 (WhatsApp)</span>
+                        <span>{CONSULTORIO.whatsappPhone} (WhatsApp)</span>
                       </a>
                     </div>
                   </span>
@@ -138,7 +142,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <MapPin size={18} className="text-champagne mt-0.5 shrink-0" />
                   <span>
                     <strong className="block text-white font-medium mb-1">Hospitais</strong>
-                    <span className="opacity-80">HMC • HUC • HUEM</span>
+                    <span className="opacity-80">{HOSPITALS.map(h => h.abbr).join(' • ')}</span>
                   </span>
                 </li>
               </ul>

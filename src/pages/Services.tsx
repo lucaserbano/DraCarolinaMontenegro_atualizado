@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Heart, Activity, HelpCircle, ChevronDown, ChevronUp, Stethoscope, ClipboardCheck, Cpu, UserCheck } from 'lucide-react';
+import { Heart, Activity, ChevronDown, ChevronUp, Stethoscope, ClipboardCheck, Cpu, UserCheck } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Services() {

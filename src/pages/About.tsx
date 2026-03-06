@@ -93,7 +93,6 @@ export default function About() {
                 src={aboutImg}
                 alt="Dra. Carolina Montenegro"
                 className="object-cover w-full h-full"
-                referrerPolicy="no-referrer"
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg border border-pearl max-w-xs hidden md:block">
@@ -128,7 +127,8 @@ export default function About() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
               >
