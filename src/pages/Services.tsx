@@ -45,7 +45,7 @@ export default function Services() {
     },
     {
       question: "Como faço para marcar uma consulta?",
-      answer: (<span>Você pode agendar sua consulta pelo telefone <a href="tel:+554130820069" className="text-bordo hover:underline font-medium">(41) 3082-0069</a> ou pelo WhatsApp <a href="https://wa.me/5541984216135?text=Ol%C3%A1!%20Vim%20a%20partir%20do%20site%20da%20Dra.%20Carolina%20Montenegro.%20Gostaria%20de%20marcar%20uma%20consulta!" target="_blank" rel="noopener noreferrer" className="text-bordo hover:underline font-medium">(41) 98421-6135</a>. Para atendimentos por convênio, o agendamento é feito diretamente pelo Hospital Marcelino Champagnat, pelo telefone <a href="tel:+554130877600" className="text-bordo hover:underline font-medium">(41) 3087-7600</a>.</span>)
+      answer: (<span>Você pode agendar sua consulta pelo telefone <a href="tel:+554130820069" className="text-bordo hover:underline font-medium">(41) 3082-0069</a> ou pelo WhatsApp <a href="https://wa.me/5541984216135?text=Ol%C3%A1!%20Vim%20a%20partir%20do%20site%20da%20Dra.%20Carolina%20Montenegro.%20Gostaria%20de%20marcar%20uma%20consulta!" target="_blank" rel="noopener noreferrer" className="text-bordo hover:underline font-medium">(41) 98421-6135</a>. Para atendimentos por convênio, o agendamento é feito diretamente pelo Hospital São Marcelino Champagnat, pelo telefone <a href="tel:+554130877600" className="text-bordo hover:underline font-medium">(41) 3087-7600</a>.</span>)
     }
   ];
 
@@ -101,12 +101,12 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Intro Section */}
-      <div className="relative overflow-hidden bg-gradient-to-b from-white via-white to-offwhite">
+      {/* Services Section — intro título + cards */}
+      <div className="relative overflow-hidden">
         {/* Aspas de abertura — marca d'água esquerda */}
         <div
           aria-hidden="true"
-          className="absolute left-0 top-1/2 -translate-y-1/2 select-none pointer-events-none"
+          className="absolute left-0 top-0 select-none pointer-events-none"
           style={{ fontSize: '32rem', lineHeight: 1, color: '#590016', opacity: 0.04, fontFamily: 'Georgia, serif', userSelect: 'none' }}
         >
           &#8220;
@@ -119,20 +119,23 @@ export default function Services() {
         >
           &#8221;
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
-          <div className="max-w-4xl mx-auto text-left">
-            <p className="text-3xl md:text-4xl font-serif text-bordo leading-relaxed mb-12 font-medium">
-              A Cardiologia abrange o diagnóstico, tratamento e prevenção de doenças do coração e do sistema circulatório. Conheça as principais áreas em que atuo para cuidar da sua saúde cardiovascular.
-            </p>
+
+        {/* Intro título */}
+        <div className="bg-gradient-to-b from-white to-offwhite relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+            <div className="max-w-4xl mx-auto text-left">
+              <p className="text-3xl md:text-4xl font-serif text-bordo leading-relaxed font-medium italic">
+                A Cardiologia abrange o diagnóstico, tratamento e prevenção de doenças do coração e do sistema circulatório. Conheça as principais áreas em que atuo para cuidar da sua saúde cardiovascular.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Services Cards */}
-      <div className="bg-offwhite py-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {services.map((service, index) => (
+        {/* Cards */}
+        <div className="bg-offwhite py-20 pb-40 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+              {services.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 15 }}
@@ -152,6 +155,7 @@ export default function Services() {
               </motion.div>
             ))}
           </div>
+        </div>
         </div>
       </div>
 

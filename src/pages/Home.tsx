@@ -11,8 +11,13 @@ export default function Home() {
     <div className="bg-offwhite">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden py-40 lg:py-48 bg-offwhite">
+        {/* Painel direito — toque de cor suave */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-y-0 right-0 w-[55%] bg-gradient-to-l from-pearl/30 via-pearl/10 to-transparent"></div>
+          <div className="absolute inset-y-0 right-[44.5%] w-[1px] bg-gradient-to-b from-transparent via-bordo/8 to-transparent hidden lg:block"></div>
+        </div>
         {/* Logo watermark */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+        <div className="absolute inset-0 z-0 flex items-center justify-end pr-8 pointer-events-none">
           <img
             src={logoBordo}
             alt=""
@@ -43,7 +48,7 @@ export default function Home() {
 
                 <div className="flex flex-col sm:flex-row gap-6">
                   <Link to="/contato" className="inline-flex items-center justify-center px-8 py-4 bg-bordo text-white text-sm font-medium uppercase tracking-widest hover:bg-bordo/90 transition-all duration-300 shadow-lg hover:shadow-bordo/20 hover:-translate-y-1 rounded-sm">
-                    Agendar Consulta
+                    Agende uma Consulta
                     <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>
                   <Link to="/atuacao" className="inline-flex items-center justify-center px-8 py-4 border border-bordo text-bordo text-sm font-medium uppercase tracking-widest hover:bg-bordo hover:text-white transition-all duration-300 rounded-sm">
@@ -67,7 +72,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative hidden lg:block"
             >
-              <div className="relative z-10 rounded-tl-[100px] rounded-br-[100px] overflow-hidden shadow-2xl border-4 border-white aspect-[3/4] w-full max-w-2xl mx-auto">
+              <div className="relative z-10 rounded-tl-[100px] rounded-br-[100px] overflow-hidden shadow-xl border-4 border-white/60 aspect-[3/4] w-full max-w-2xl mx-auto">
                 <img
                   src={heroImg}
                   alt="Dra. Carolina Montenegro"
@@ -75,8 +80,8 @@ export default function Home() {
                 />
               </div>
               {/* Decorative elements */}
-              <div className="absolute -bottom-12 -right-12 w-96 h-96 bg-champagne/40 rounded-full blur-3xl -z-10"></div>
-              <div className="absolute -top-12 -left-12 w-96 h-96 bg-bordo/20 rounded-full blur-3xl -z-10"></div>
+              <div className="absolute -bottom-12 -right-12 w-96 h-96 bg-champagne/30 rounded-full blur-3xl -z-10"></div>
+              <div className="absolute -top-12 -left-12 w-96 h-96 bg-pearl/40 rounded-full blur-3xl -z-10"></div>
             </motion.div>
           </div>
         </div>
@@ -255,7 +260,7 @@ export default function Home() {
 
           <div className="text-center mt-20">
             <Link to="/atuacao" className="inline-block px-8 py-3 border border-grafite/20 text-grafite text-sm uppercase tracking-widest hover:bg-grafite hover:text-white transition-all duration-300 rounded-sm">
-              Ver Detalhes
+              Veja os Detalhes
             </Link>
           </div>
         </div>
@@ -263,16 +268,6 @@ export default function Home() {
 
       {/* CTA / Locations Section */}
       <section className="py-40 lg:py-48 bg-gradient-to-br from-[#590016] to-[#2D000B] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-          </svg>
-        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
@@ -322,17 +317,17 @@ export default function Home() {
                 <h3 className="text-xl font-serif text-champagne">Teleconsulta</h3>
               </div>
               <p className="text-white/80 font-light text-sm leading-relaxed mb-4">
-                Atendo por teleconsulta pacientes de todo o Brasil e exterior.
+                Atendimento por teleconsulta para pacientes do Brasil e exterior.
               </p>
               <div className="text-sm text-white/90 font-medium">
-                <a href="tel:+554198889-2856" className="block hover:text-champagne transition-colors">(41) 98889-2856</a>
+                <a href="tel:+554198889-2856" className="block hover:text-champagne transition-colors">Tel: (41) 98889-2856</a>
               </div>
             </div>
           </div>
 
           <div className="text-center">
             <Link to="/contato" className="inline-flex items-center justify-center px-10 py-4 bg-white text-bordo text-base font-medium uppercase tracking-widest hover:bg-champagne transition-all shadow-xl rounded-sm">
-              Entrar em Contato
+              Entre em Contato
             </Link>
           </div>
         </div>

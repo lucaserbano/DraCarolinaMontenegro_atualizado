@@ -80,7 +80,7 @@ export default function About() {
                 className="inline-flex items-center gap-2 text-bordo font-medium hover:text-bordo/80 transition-colors"
               >
                 <BookOpen size={20} />
-                Acessar Currículo Lattes Completo
+                Acesse o Currículo Lattes Completo
               </a>
             </div>
           </motion.div>

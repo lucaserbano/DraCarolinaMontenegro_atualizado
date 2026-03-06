@@ -14,7 +14,7 @@ export const HOSPITALS = [
   {
     id: 'hmc',
     abbr: 'HMC',
-    name: 'Hospital Marcelino Champagnat',
+    name: 'Hospital São Marcelino Champagnat',
     street: 'Av. Presidente Affonso Camargo, 1399',
     city: 'Cristo Rei, Curitiba - PR',
     cep: '80050-370',

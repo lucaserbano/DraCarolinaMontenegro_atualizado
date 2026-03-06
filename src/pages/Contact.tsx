@@ -48,6 +48,9 @@ export default function Contact() {
                     <a href={CONSULTORIO.whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-bordo transition-colors">
                       <Phone size={16} /> WhatsApp: {CONSULTORIO.whatsappPhone}
                     </a>
+                    <a href="tel:+554198889-2856" className="flex items-center gap-2 hover:text-bordo transition-colors">
+                      <Phone size={16} /> Teleconsultas: Tel: (41) 98889-2856
+                    </a>
                   </div>
                 </div>
               </div>
