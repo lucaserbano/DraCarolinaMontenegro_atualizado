@@ -17,7 +17,7 @@ export default function Home() {
             src={logoBordo}
             alt=""
             aria-hidden="true"
-            className="h-[85%] w-auto object-contain opacity-[0.055] select-none"
+            className="h-[85%] w-auto object-contain opacity-[0.03] select-none"
           />
         </div>
 
@@ -282,9 +282,9 @@ export default function Home() {
             <div className="w-20 h-[1px] bg-white/30 mx-auto"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 lg:gap-6 mb-20">
-            {/* Consultório */}
-            <div className="bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors min-h-[220px]">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-8 lg:gap-6 mb-20">
+            {/* Consultório — col-span-2 (linha 1) */}
+            <div className="md:col-span-2 bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors min-h-[220px]">
               <h3 className="text-xl font-serif mb-4 text-champagne">{CONSULTORIO.name}</h3>
               <p className="text-white/80 font-light text-sm leading-relaxed mb-4">
                 {CONSULTORIO.street}<br />
@@ -297,9 +297,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Hospitals */}
-            {HOSPITALS.map(hospital => (
-              <div key={hospital.id} className="bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors min-h-[220px]">
+            {/* Hospitals — índice 0 e 1: col-span-2 (linha 1); índice 2: col-span-3 (linha 2) */}
+            {HOSPITALS.map((hospital, idx) => (
+              <div key={hospital.id} className={`${idx < 2 ? 'md:col-span-2' : 'md:col-span-3'} bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors min-h-[220px]`}>
                 <h3 className="text-xl font-serif mb-4 text-champagne">{hospital.name}</h3>
                 <p className="text-white/80 font-light text-sm leading-relaxed mb-4">
                   {hospital.street}<br />
@@ -310,13 +310,13 @@ export default function Home() {
                   {hospital.showPhone && (
                     <a href={hospital.phoneTel} className="hover:text-champagne transition-colors">Tel: {hospital.phone}</a>
                   )}
-                  <a href={hospital.website} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-champagne transition-colors font-light text-sm">{hospital.website.replace('https://', '')}</a>
+                  <a href={hospital.website} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-champagne transition-colors font-light text-sm break-all">{hospital.website.replace('https://', '')}</a>
                 </div>
               </div>
             ))}
 
-            {/* Teleconsulta */}
-            <div className="bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors min-h-[220px]">
+            {/* Teleconsulta — col-span-3 (linha 2) */}
+            <div className="md:col-span-3 bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors min-h-[220px]">
               <div className="flex items-center gap-3 mb-4">
                 <Monitor className="w-5 h-5 text-champagne shrink-0" />
                 <h3 className="text-xl font-serif text-champagne">Teleconsulta</h3>

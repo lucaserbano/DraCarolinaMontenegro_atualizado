@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Heart, Activity, ChevronDown, ChevronUp, Stethoscope, ClipboardCheck, Cpu, UserCheck } from 'lucide-react';
+import logoBordo from '../assets/logos/logo-bordo.png';
 
 export default function Services() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -102,7 +103,7 @@ export default function Services() {
 
       {/* Intro Section */}
       <div className="relative overflow-hidden bg-gradient-to-b from-white via-white to-offwhite">
-        {/* Aspas marca d'água */}
+        {/* Aspas de abertura — marca d'água esquerda */}
         <div
           aria-hidden="true"
           className="absolute left-0 top-1/2 -translate-y-1/2 select-none pointer-events-none"
@@ -110,8 +111,16 @@ export default function Services() {
         >
           &#8220;
         </div>
+        {/* Aspas de fechamento — marca d'água direita */}
+        <div
+          aria-hidden="true"
+          className="absolute right-0 bottom-0 translate-y-1/4 select-none pointer-events-none"
+          style={{ fontSize: '32rem', lineHeight: 1, color: '#590016', opacity: 0.04, fontFamily: 'Georgia, serif', userSelect: 'none' }}
+        >
+          &#8221;
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-left">
             <p className="text-3xl md:text-4xl font-serif text-bordo leading-relaxed mb-12 font-medium">
               A Cardiologia abrange o diagnóstico, tratamento e prevenção de doenças do coração e do sistema circulatório. Conheça as principais áreas em que atuo para cuidar da sua saúde cardiovascular.
             </p>
@@ -147,7 +156,17 @@ export default function Services() {
       </div>
 
       {/* FAQ Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-40">
+      <div className="relative overflow-hidden py-40">
+        {/* Logo marca d'água */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+          <img
+            src={logoBordo}
+            alt=""
+            aria-hidden="true"
+            className="h-[85%] w-auto object-contain opacity-[0.03] select-none"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-24">
             <h2 className="text-3xl font-serif text-bordo mb-6">Dúvidas Frequentes</h2>
@@ -189,6 +208,7 @@ export default function Services() {
               </motion.div>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </div>

@@ -156,10 +156,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {/* Hours & Social */}
             <div>
               <h4 className="font-serif text-lg text-white mb-6">Atendimento</h4>
-              <p className="text-sm text-pearl/80 font-light mb-8">
-                Segunda a Sexta-feira<br />
-                Das 09h às 18h
+              <p className="text-sm text-pearl/80 font-light mb-4">
+                Segunda–Sexta, das 9h às 18h
               </p>
+              <div className="text-sm text-pearl/80 font-light mb-8">
+                <p className="font-medium text-white mb-1">Teleconsulta</p>
+                <a href="tel:+554198889-2856" className="hover:text-champagne transition-colors">(41) 98889-2856</a>
+              </div>
 
               <h4 className="font-serif text-lg text-white mb-4">Redes Sociais</h4>
               <div className="flex flex-col gap-4">
