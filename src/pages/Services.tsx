@@ -28,7 +28,7 @@ export default function Services() {
     },
     {
       question: "Como faço para marcar uma consulta?",
-      answer: "Você pode agendar uma consulta entrando em contato através do telefone ou email disponibilizados na página de contato. Atendo no Hospital Universitário Evangélico Mackenzie e em consultório particular."
+      answer: "Você pode agendar uma consulta diretamente pelo consultório particular, pelo telefone (41) 3082-0069 ou WhatsApp (41) 98421-6135. Também atendo no Hospital Marcelino Champagnat, pelo telefone (41) 3087-7600."
     }
   ];
 

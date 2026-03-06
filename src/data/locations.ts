@@ -20,6 +20,8 @@ export const HOSPITALS = [
     cep: '80050-370',
     phone: '(41) 3087-7600',
     phoneTel: 'tel:+554130877600',
+    showPhone: true,
+    website: 'https://hospitalmarcelino.com.br',
   },
   {
     id: 'huc',
@@ -30,6 +32,8 @@ export const HOSPITALS = [
     cep: '80050-350',
     phone: '(41) 3271-3000',
     phoneTel: 'tel:+554132713000',
+    showPhone: false,
+    website: 'https://hospitalcajuru.org.br',
   },
   {
     id: 'huem',
@@ -40,5 +44,7 @@ export const HOSPITALS = [
     cep: '80730-150',
     phone: '(41) 3240-5000',
     phoneTel: 'tel:+554132405000',
+    showPhone: false,
+    website: 'https://hospital.mackenzie.br/huem/home',
   },
 ];

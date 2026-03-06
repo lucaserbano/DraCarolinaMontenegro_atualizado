@@ -14,6 +14,20 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-offwhite via-white to-pearl opacity-80"></div>
           <div className="absolute top-0 right-0 w-2/3 h-full bg-[#fcfbfb] -skew-x-12 translate-x-1/3"></div>
+          {/* Subtle dot grid */}
+          <div className="absolute inset-0 opacity-[0.06]">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="hero-dots" width="28" height="28" patternUnits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1.5" fill="#6B0020" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#hero-dots)" />
+            </svg>
+          </div>
+          {/* Decorative orbs */}
+          <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-bordo/8 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-champagne/30 rounded-full blur-3xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -45,6 +59,13 @@ export default function Home() {
                     Saiba Mais
                   </Link>
                 </div>
+
+                <div className="mt-8 pt-6 border-t border-bordo/10">
+                  <p className="text-xs text-grafite/40 font-light leading-relaxed tracking-wide">
+                    Dra. Carolina Montenegro &nbsp;·&nbsp; CRM-PR 45316<br />
+                    Clínica Médica – RQE Nº: 32336 &nbsp;·&nbsp; Cardiologia – RQE Nº: 36066
+                  </p>
+                </div>
               </motion.div>
             </div>
 
@@ -63,8 +84,8 @@ export default function Home() {
                 />
               </div>
               {/* Decorative elements */}
-              <div className="absolute -bottom-12 -right-12 w-96 h-96 bg-champagne/20 rounded-full blur-3xl -z-10"></div>
-              <div className="absolute -top-12 -left-12 w-96 h-96 bg-bordo/10 rounded-full blur-3xl -z-10"></div>
+              <div className="absolute -bottom-12 -right-12 w-96 h-96 bg-champagne/40 rounded-full blur-3xl -z-10"></div>
+              <div className="absolute -top-12 -left-12 w-96 h-96 bg-bordo/20 rounded-full blur-3xl -z-10"></div>
             </motion.div>
           </div>
         </div>
@@ -104,46 +125,57 @@ export default function Home() {
       </section>
 
       {/* Missão, Visão e Valores */}
-      <section className="py-40 lg:py-48 bg-offwhite relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-40 lg:py-48 bg-gradient-to-br from-[#6B0020] via-[#4A0016] to-[#1E0008] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1" fill="white" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)" />
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-4xl font-serif text-bordo mb-6">Missão, Visão e Valores</h2>
-            <div className="w-16 h-[1px] bg-champagne mx-auto"></div>
+            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Missão, Visão e Valores</h2>
+            <div className="w-16 h-[1px] bg-champagne/50 mx-auto"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Missão — card claro */}
+            {/* Missão */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0 }}
-              className="bg-white border border-pearl rounded-xl p-10 flex flex-col gap-6"
+              className="bg-white/95 rounded-xl p-10 flex flex-col gap-6"
             >
               <div className="w-12 h-12 rounded-full border border-bordo/20 flex items-center justify-center">
                 <Heart className="w-5 h-5 text-bordo" />
               </div>
               <div>
-                <h3 className="text-2xl font-serif text-grafite mb-4">Missão</h3>
+                <h3 className="text-2xl font-serif text-bordo mb-4">Missão</h3>
                 <p className="text-grafite/70 font-light leading-relaxed">
                   Oferecer às pessoas o cuidado cardiológico que elas merecem: preciso, humano e baseado no que existe de mais avançado na medicina. Minha missão é estar ao lado de cada paciente, lutando pela sua vida e pelo seu bem-estar, em cada etapa da jornada.
                 </p>
               </div>
             </motion.div>
 
-            {/* Valores — card escuro, ocupa 2 linhas */}
+            {/* Valores — ocupa 2 linhas */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-bordo rounded-xl p-10 flex flex-col gap-6 md:row-span-2"
+              className="bg-white/95 rounded-xl p-10 flex flex-col gap-6 md:row-span-2"
             >
-              <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
-                <Activity className="w-5 h-5 text-white" />
+              <div className="w-12 h-12 rounded-full border border-bordo/20 flex items-center justify-center">
+                <Activity className="w-5 h-5 text-bordo" />
               </div>
               <div>
-                <h3 className="text-2xl font-serif text-white mb-6">Valores</h3>
+                <h3 className="text-2xl font-serif text-bordo mb-6">Valores</h3>
                 <ul className="space-y-6">
                   {[
                     { title: 'Excelência técnica', desc: 'Busco o melhor conhecimento disponível para oferecer o melhor cuidado possível. Formação contínua não é diferencial, é obrigação.' },
@@ -151,21 +183,21 @@ export default function Home() {
                     { title: 'Individualização', desc: 'Cada paciente é único. O cuidado que ofereço é adaptado à história, à realidade e aos objetivos de cada pessoa.' },
                     { title: 'Humanização', desc: 'Por trás de cada diagnóstico há uma pessoa, uma família, uma história. Considero sempre o ser humano inteiro, não apenas o coração.' },
                   ].map((v, i) => (
-                    <li key={i} className="text-white/90 font-light leading-relaxed text-sm">
-                      <span className="font-semibold text-champagne">{v.title}</span> — {v.desc}
+                    <li key={i} className="text-grafite/70 font-light leading-relaxed">
+                      <span className="font-semibold text-bordo">{v.title}</span> — {v.desc}
                     </li>
                   ))}
                 </ul>
               </div>
             </motion.div>
 
-            {/* Visão — card escuro */}
+            {/* Visão */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-bordo/10 border border-bordo/15 rounded-xl p-10 flex flex-col gap-6"
+              className="bg-white/95 rounded-xl p-10 flex flex-col gap-6"
             >
               <div className="w-12 h-12 rounded-full border border-bordo/20 flex items-center justify-center">
                 <Clock className="w-5 h-5 text-bordo" />
@@ -283,8 +315,11 @@ export default function Home() {
                   {hospital.city}<br />
                   {hospital.cep}
                 </p>
-                <div className="text-sm text-white/90 font-medium">
-                  <a href={hospital.phoneTel} className="block hover:text-champagne transition-colors mb-1">Tel: {hospital.phone}</a>
+                <div className="text-sm text-white/90 font-medium flex flex-col gap-1">
+                  {hospital.showPhone && (
+                    <a href={hospital.phoneTel} className="hover:text-champagne transition-colors">Tel: {hospital.phone}</a>
+                  )}
+                  <a href={hospital.website} target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-champagne transition-colors font-light text-xs">{hospital.website.replace('https://', '')}</a>
                 </div>
               </div>
             ))}

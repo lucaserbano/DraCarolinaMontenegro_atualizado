@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Phone, MapPin } from 'lucide-react';
+import { Phone, MapPin, ExternalLink } from 'lucide-react';
 import photoContact from '../assets/images/foto para sobre.jpeg';
 import logoHUC from '../assets/Logo hospitais/2c446ea1-1830-4f46-bf4e-6644feb5bfb3-cajuru.png';
 import logoHMC from '../assets/Logo hospitais/logo_horiz_color-1024x343.png';
@@ -65,8 +65,13 @@ export default function Contact() {
                       {hospital.city}, {hospital.cep}
                     </p>
                     <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
-                      <a href={hospital.phoneTel} className="flex items-center gap-2 hover:text-bordo transition-colors">
-                        <Phone size={16} /> {hospital.phone}
+                      {hospital.showPhone && (
+                        <a href={hospital.phoneTel} className="flex items-center gap-2 hover:text-bordo transition-colors">
+                          <Phone size={16} /> {hospital.phone}
+                        </a>
+                      )}
+                      <a href={hospital.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-bordo transition-colors text-grafite/60 font-light text-sm">
+                        <ExternalLink size={14} /> {hospital.website.replace('https://', '')}
                       </a>
                     </div>
                   </div>
@@ -116,9 +121,12 @@ export default function Contact() {
         {/* Welcoming Phrase */}
         <div className="mt-32 text-center max-w-4xl mx-auto">
           <div className="w-24 h-[1px] bg-bordo/20 mx-auto mb-10"></div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-bordo leading-relaxed italic max-w-3xl mx-auto">
-            "Todo coração merece ser mais forte! Aguardo sua visita para melhorar a sua saúde e bem-estar."
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-bordo leading-relaxed italic max-w-3xl mx-auto mb-4">
+            "Todo coração merece ser mais forte!"
           </h2>
+          <p className="text-lg md:text-xl font-serif text-grafite/50 italic font-light">
+            Aguardo sua visita para melhorar a sua saúde e bem-estar.
+          </p>
         </div>
       </div>
     </div>

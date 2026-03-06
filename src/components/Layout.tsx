@@ -114,6 +114,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <p className="text-sm text-pearl/80 leading-relaxed max-w-xs font-light">
                 Atendimento cardiológico especializado em Insuficiência Cardíaca e Transplante Cardíaco. Excelência técnica e sensibilidade.
               </p>
+              <p className="text-xs text-pearl/40 leading-relaxed font-light mt-2">
+                CRM-PR 45316<br />
+                Clínica Médica – RQE Nº: 32336<br />
+                Cardiologia – RQE Nº: 36066
+              </p>
             </div>
 
             {/* Contact Info */}
@@ -124,8 +129,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <MapPin size={18} className="text-champagne mt-0.5 shrink-0" />
                   <span>
                     <strong className="block text-white font-medium mb-1">Consultório Particular</strong>
-                    Rua Emiliano Perneta, 860, 17º andar<br />
-                    Centro, Curitiba - PR
+                    {CONSULTORIO.street}<br />
+                    {CONSULTORIO.city}
                     <div className="mt-3 flex flex-col gap-2">
                       <a href={CONSULTORIO.phoneTel} className="flex items-center gap-2 hover:text-champagne transition-colors">
                         <Phone size={14} className="text-champagne shrink-0" />
