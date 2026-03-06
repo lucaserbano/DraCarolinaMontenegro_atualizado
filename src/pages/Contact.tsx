@@ -15,7 +15,7 @@ function WhatsAppIcon({ size = 16 }: { size?: number }) {
 export default function Contact() {
   return (
     <div className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-40">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           {/* Contact Info */}
           <motion.div
@@ -140,7 +140,7 @@ export default function Contact() {
         </div>
 
         {/* Welcoming Phrase */}
-        <div className="mt-32 text-center max-w-4xl mx-auto">
+        <div className="mt-16 text-center max-w-4xl mx-auto">
           <div className="w-24 h-[1px] bg-bordo/20 mx-auto mb-10"></div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-bordo leading-relaxed italic max-w-3xl mx-auto mb-4">
             "Todo coração merece ser mais forte!"

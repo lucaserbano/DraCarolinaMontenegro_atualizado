@@ -34,7 +34,7 @@ export default function About() {
   return (
     <div className="bg-white">
       {/* Header */}
-      <div className="bg-offwhite py-24 border-b border-pearl/30">
+      <div className="bg-offwhite py-16 border-b border-pearl/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ export default function About() {
         >
           &#8221;
         </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -130,7 +130,7 @@ export default function About() {
       </div>
 
       {/* Timeline / Education */}
-      <div className="relative py-24 bg-gradient-to-br from-offwhite via-white to-champagne/20 overflow-hidden">
+      <div className="relative py-16 bg-gradient-to-br from-offwhite via-white to-champagne/20 overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.015]"
           style={{

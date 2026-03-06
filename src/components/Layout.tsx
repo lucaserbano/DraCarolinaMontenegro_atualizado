@@ -125,7 +125,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </a>
 
       {/* Footer */}
-      <footer className="bg-grafite text-pearl py-16 border-t border-champagne/20">
+      <footer className="bg-grafite text-pearl py-12 border-t border-champagne/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 max-w-5xl mx-auto">
 

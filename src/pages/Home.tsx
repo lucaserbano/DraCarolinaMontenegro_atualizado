@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div className="bg-offwhite">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden py-40 lg:py-48 bg-offwhite">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden py-24 lg:py-32 bg-offwhite">
         {/* Painel direito — toque de cor suave */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute inset-y-0 right-0 w-[55%] bg-gradient-to-l from-pearl/30 via-pearl/10 to-transparent"></div>
@@ -106,7 +106,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative py-40 lg:py-48 bg-white overflow-hidden text-grafite">
+      <section className="relative py-24 lg:py-32 bg-white overflow-hidden text-grafite">
         {/* Background Image that covers the left half */}
         <div className="absolute inset-0 md:w-[60%] h-1/2 md:h-full z-0">
           <img
@@ -140,7 +140,7 @@ export default function Home() {
       </section>
 
       {/* Missão, Visão e Valores */}
-      <section className="py-40 lg:py-48 bg-gradient-to-br from-[#6B0020] via-[#4A0016] to-[#1E0008] relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-[#6B0020] via-[#4A0016] to-[#1E0008] relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -229,7 +229,7 @@ export default function Home() {
       </section>
 
       {/* Specialties / Features */}
-      <section className="py-40 lg:py-48 bg-offwhite relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-offwhite relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mx-auto mb-24">
             <h2 className="text-3xl md:text-4xl font-serif text-bordo mb-6">Áreas de Atuação</h2>
@@ -286,7 +286,7 @@ export default function Home() {
       </section>
 
       {/* CTA / Locations Section */}
-      <section className="py-40 lg:py-48 bg-gradient-to-br from-[#590016] to-[#2D000B] text-white relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-[#590016] to-[#2D000B] text-white relative overflow-hidden">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">

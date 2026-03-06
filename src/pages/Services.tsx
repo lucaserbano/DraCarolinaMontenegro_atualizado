@@ -86,7 +86,7 @@ export default function Services() {
   return (
     <div className="bg-white">
       {/* Header */}
-      <div className="py-24 text-white relative overflow-hidden" style={{ background: 'linear-gradient(60deg, #6B001C, #590016, #520016)' }}>
+      <div className="py-16 text-white relative overflow-hidden" style={{ background: 'linear-gradient(60deg, #6B001C, #590016, #520016)' }}>
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.h1
@@ -123,7 +123,7 @@ export default function Services() {
 
         {/* Intro título */}
         <div className="bg-gradient-to-b from-white to-offwhite relative z-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-3xl md:text-4xl font-serif text-bordo leading-relaxed font-medium italic mb-6">
                 A Cardiologia abrange o diagnóstico, tratamento e prevenção de doenças do coração e do sistema circulatório.
@@ -136,7 +136,7 @@ export default function Services() {
         </div>
 
         {/* Cards */}
-        <div className="bg-offwhite py-20 pb-40 relative z-10">
+        <div className="bg-offwhite py-12 pb-20 relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
               {services.map((service, index) => (
@@ -164,7 +164,7 @@ export default function Services() {
       </div>
 
       {/* FAQ Section */}
-      <div className="relative overflow-hidden py-40">
+      <div className="relative overflow-hidden py-24">
         {/* Logo marca d'água */}
         <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
           <img
