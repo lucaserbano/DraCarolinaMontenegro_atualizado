@@ -86,7 +86,7 @@ export default function Services() {
   return (
     <div className="bg-white">
       {/* Header */}
-      <div className="bg-gradient-to-b from-[#8B0025] via-bordo to-[#3D000F] py-40 text-white relative overflow-hidden">
+      <div className="py-24 text-white relative overflow-hidden" style={{ background: 'linear-gradient(60deg, #6B001C, #590016, #520016)' }}>
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.h1
@@ -153,7 +153,7 @@ export default function Services() {
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-serif text-bordo mb-4">{service.title}</h3>
-                <p className="text-grafite/70 leading-relaxed font-light">
+                <p className="text-grafite/70 leading-relaxed font-light text-justify">
                   {service.description}
                 </p>
               </motion.div>

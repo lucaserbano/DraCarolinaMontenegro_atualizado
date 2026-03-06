@@ -51,7 +51,24 @@ export default function About() {
       </div>
 
       {/* Bio Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative overflow-hidden">
+        {/* Aspas de abertura — marca d'água esquerda */}
+        <div
+          aria-hidden="true"
+          className="absolute left-0 top-0 select-none pointer-events-none z-[1]"
+          style={{ fontSize: '32rem', lineHeight: 1, color: '#590016', opacity: 0.05, fontFamily: 'Georgia, serif', userSelect: 'none' }}
+        >
+          &#8220;
+        </div>
+        {/* Aspas de fechamento — marca d'água direita */}
+        <div
+          aria-hidden="true"
+          className="absolute right-0 bottom-0 translate-y-1/4 select-none pointer-events-none z-[1]"
+          style={{ fontSize: '32rem', lineHeight: 1, color: '#590016', opacity: 0.05, fontFamily: 'Georgia, serif', userSelect: 'none' }}
+        >
+          &#8221;
+        </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -109,6 +126,7 @@ export default function About() {
             </div>
           </motion.div>
         </div>
+      </div>
       </div>
 
       {/* Timeline / Education */}

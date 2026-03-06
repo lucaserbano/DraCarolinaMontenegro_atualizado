@@ -131,7 +131,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="space-y-6 flex flex-col items-start">
               <img src={carimboBranco} alt="Dra. Carolina Montenegro" className="h-24 md:h-32 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity" />
               <p className="text-sm text-pearl/80 leading-relaxed max-w-xs font-light">
-                Cardiologia especializada. Excelência técnica e sensibilidade.
+                Cardiologia especializada.<br />
+                Excelência técnica e sensibilidade.
               </p>
               <p className="text-sm text-pearl/40 leading-relaxed font-light mt-2">
                 CRM-PR 45316<br />
@@ -142,7 +143,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
             {/* Contact Info */}
             <div>
-              <h4 className="font-serif text-lg text-white mb-6">Contato</h4>
+              <h4 className="font-serif text-xl font-semibold text-white mb-6 tracking-wide">Contato</h4>
               <ul className="space-y-4 text-sm font-light">
                 <li className="flex items-start gap-3">
                   <MapPin size={18} className="text-champagne mt-0.5 shrink-0" />
@@ -156,25 +157,42 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                         <span>{CONSULTORIO.phone}</span>
                       </a>
                       <a href={CONSULTORIO.whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-champagne transition-colors">
-                        <Phone size={14} className="text-champagne shrink-0" />
+                        <WhatsAppIcon size={14} />
                         <span>{CONSULTORIO.whatsappPhone} (WhatsApp)</span>
+                      </a>
+                      <a href={TELECONSULTA_WA.whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-champagne transition-colors">
+                        <WhatsAppIcon size={14} />
+                        <span>{TELECONSULTA_WA.phone} (WhatsApp · Teleconsulta)</span>
                       </a>
                     </div>
                   </span>
                 </li>
-                <li className="flex items-start gap-3 mt-6">
-                  <MapPin size={18} className="text-champagne mt-0.5 shrink-0" />
-                  <span>
-                    <strong className="block text-white font-medium mb-1">Hospitais</strong>
-                    <span className="opacity-80">{HOSPITALS.map(h => h.abbr).join(' • ')}</span>
-                  </span>
-                </li>
+                {(() => {
+                  const hmc = HOSPITALS.find(h => h.id === 'hmc');
+                  if (!hmc) return null;
+                  return (
+                    <li className="flex items-start gap-3 mt-6">
+                      <MapPin size={18} className="text-champagne mt-0.5 shrink-0" />
+                      <span>
+                        <strong className="block text-white font-medium mb-1">{hmc.name}</strong>
+                        {hmc.street}<br />
+                        {hmc.city}
+                        <div className="mt-3 flex flex-col gap-2">
+                          <a href={hmc.whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-champagne transition-colors">
+                            <WhatsAppIcon size={14} />
+                            <span>{hmc.phone} (WhatsApp)</span>
+                          </a>
+                        </div>
+                      </span>
+                    </li>
+                  );
+                })()}
               </ul>
             </div>
 
             {/* Hours & Social */}
             <div>
-              <h4 className="font-serif text-lg text-white mb-6">Atendimento</h4>
+              <h4 className="font-serif text-xl font-semibold text-white mb-6 tracking-wide">Atendimento</h4>
               <p className="text-sm text-pearl/80 font-light mb-4">
                 Segunda–Sexta, das 9h às 18h
               </p>
@@ -183,7 +201,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <a href={TELECONSULTA_WA.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-champagne transition-colors">{TELECONSULTA_WA.phone}</a>
               </div>
 
-              <h4 className="font-serif text-lg text-white mb-4">Redes Sociais</h4>
+              <h4 className="font-serif text-xl font-semibold text-white mb-4 tracking-wide">Redes Sociais</h4>
               <div className="flex flex-col gap-4">
                 <a href="https://www.instagram.com/dra.carolinamontenegro/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-pearl hover:text-white transition-colors group">
                   <span className="w-10 h-10 rounded-full border border-pearl/20 flex items-center justify-center group-hover:bg-white group-hover:text-bordo group-hover:border-white transition-all duration-300">

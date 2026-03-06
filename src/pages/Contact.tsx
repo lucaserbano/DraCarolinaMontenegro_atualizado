@@ -1,9 +1,7 @@
 import { motion } from 'motion/react';
 import { Phone, MapPin, ExternalLink } from 'lucide-react';
 import photoContact from '../assets/images/foto para sobre.jpeg';
-import logoHUC from '../assets/Logo hospitais/2c446ea1-1830-4f46-bf4e-6644feb5bfb3-cajuru.png';
 import logoHMC from '../assets/Logo hospitais/logo_horiz_color-1024x343.png';
-import logoHUEM from '../assets/Logo hospitais/images-2.png';
 import logoCM from '../assets/logos/logo-bordo.png';
 import { CONSULTORIO, HOSPITALS, TELECONSULTA_WA } from '../data/locations';
 
@@ -14,12 +12,6 @@ function WhatsAppIcon({ size = 16 }: { size?: number }) {
     </svg>
   );
 }
-
-const hospitalLogos: Record<string, string> = {
-  hmc: logoHMC,
-  huc: logoHUC,
-  huem: logoHUEM,
-};
 
 export default function Contact() {
   return (
@@ -32,71 +24,91 @@ export default function Contact() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-5xl font-serif text-bordo mb-8">Entre em Contato</h1>
+            <h1 className="text-4xl md:text-5xl font-serif text-bordo mb-8">Agende sua consulta!</h1>
             <p className="text-lg text-grafite/70 mb-16 leading-relaxed font-light">
               Estamos à disposição para agendar sua consulta ou esclarecer dúvidas. Confira abaixo nossos locais de atendimento e canais diretos.
             </p>
 
-            <div className="space-y-12">
-              {/* Consultório */}
-              <div className="flex items-start gap-6 group">
-                <div className="w-14 h-14 bg-offwhite rounded-full flex items-center justify-center flex-shrink-0 text-bordo border border-pearl group-hover:border-bordo transition-colors">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif text-grafite mb-3">{CONSULTORIO.name}</h3>
-                  <p className="text-grafite/70 font-light leading-relaxed mb-2">
-                    {CONSULTORIO.street}<br />
-                    {CONSULTORIO.city}, {CONSULTORIO.cep}
-                  </p>
-                  <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
-                    <a href={CONSULTORIO.phoneTel} className="flex items-center gap-2 hover:text-bordo transition-colors">
-                      <Phone size={16} /> {CONSULTORIO.phone}
-                    </a>
-                    <a href={CONSULTORIO.whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-bordo transition-colors">
-                      <Phone size={16} /> WhatsApp: {CONSULTORIO.whatsappPhone}
-                      <WhatsAppIcon size={15} />
-                    </a>
-                    <a href={TELECONSULTA_WA.whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-bordo transition-colors">
-                      <Phone size={16} /> Teleconsultas: {TELECONSULTA_WA.phone}
-                      <WhatsAppIcon size={15} />
-                    </a>
+            <div className="space-y-10">
+              {/* Atendimentos particulares */}
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-bordo/60 mb-6 pb-3 border-b border-pearl">Atendimentos particulares</p>
+                <div className="space-y-8">
+                  {/* Consultório */}
+                  <div className="flex items-start gap-6 group">
+                    <div className="w-14 h-14 bg-offwhite rounded-full flex items-center justify-center flex-shrink-0 text-bordo border border-pearl group-hover:border-bordo transition-colors">
+                      <MapPin size={24} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-serif text-grafite mb-3">{CONSULTORIO.name}</h3>
+                      <p className="text-grafite/70 font-light leading-relaxed mb-2">
+                        {CONSULTORIO.street}<br />
+                        {CONSULTORIO.city}, {CONSULTORIO.cep}
+                      </p>
+                      <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
+                        <a href={CONSULTORIO.phoneTel} className="flex items-center gap-2 hover:text-bordo transition-colors">
+                          <Phone size={16} /> {CONSULTORIO.phone}
+                        </a>
+                        <a href={CONSULTORIO.whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-bordo transition-colors">
+                          <Phone size={16} /> WhatsApp: {CONSULTORIO.whatsappPhone}
+                          <WhatsAppIcon size={15} />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Teleconsultas */}
+                  <div className="flex items-start gap-6 group">
+                    <div className="w-14 h-14 bg-offwhite rounded-full flex items-center justify-center flex-shrink-0 text-bordo border border-pearl group-hover:border-bordo transition-colors">
+                      <Phone size={22} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-serif text-grafite mb-3">Teleconsultas</h3>
+                      <p className="text-grafite/70 font-light leading-relaxed mb-2">
+                        Atendimento online para todo o Brasil.
+                      </p>
+                      <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
+                        <a href={TELECONSULTA_WA.whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-bordo transition-colors">
+                          <Phone size={16} /> WhatsApp: {TELECONSULTA_WA.phone}
+                          <WhatsAppIcon size={15} />
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Hospitals */}
-              {HOSPITALS.map(hospital => (
-                <div key={hospital.id} className="flex items-start gap-6 group">
-                  <div className="w-14 h-14 bg-offwhite rounded-full flex items-center justify-center flex-shrink-0 text-bordo border border-pearl group-hover:border-bordo transition-colors">
-                    <div className="text-xs font-bold">{hospital.abbr}</div>
-                  </div>
+              {/* Atendimentos particulares e convênios */}
+              {(() => {
+                const hmc = HOSPITALS.find(h => h.id === 'hmc');
+                if (!hmc) return null;
+                return (
                   <div>
-                    <h3 className="text-xl font-serif text-grafite mb-3">{hospital.name}</h3>
-                    <p className="text-grafite/70 font-light leading-relaxed mb-2">
-                      {hospital.street}<br />
-                      {hospital.city}, {hospital.cep}
-                    </p>
-                    <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
-                      {hospital.showPhone && (
-                        'whatsappUrl' in hospital && hospital.whatsappUrl ? (
-                          <a href={hospital.whatsappUrl as string} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-bordo transition-colors">
-                            <Phone size={16} /> {hospital.phone}
+                    <p className="text-xs font-semibold uppercase tracking-widest text-bordo/60 mb-6 pb-3 border-b border-pearl">Atendimentos particulares e convênios</p>
+                    <div className="flex items-start gap-6 group">
+                      <div className="w-14 h-14 bg-offwhite rounded-full flex items-center justify-center flex-shrink-0 text-bordo border border-pearl group-hover:border-bordo transition-colors">
+                        <div className="text-xs font-bold">{hmc.abbr}</div>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-serif text-grafite mb-3">{hmc.name}</h3>
+                        <p className="text-grafite/70 font-light leading-relaxed mb-2">
+                          {hmc.street}<br />
+                          {hmc.city}, {hmc.cep}
+                        </p>
+                        <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
+                          <a href={hmc.whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-bordo transition-colors">
+                            <Phone size={16} /> {hmc.phone}
                             <WhatsAppIcon size={15} />
                           </a>
-                        ) : (
-                          <a href={hospital.phoneTel} className="flex items-center gap-2 hover:text-bordo transition-colors">
-                            <Phone size={16} /> {hospital.phone}
+                          <a href={hmc.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-bordo transition-colors text-grafite/60 font-light text-sm">
+                            <ExternalLink size={14} /> {hmc.website.replace('https://', '')}
                           </a>
-                        )
-                      )}
-                      <a href={hospital.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-bordo transition-colors text-grafite/60 font-light text-sm">
-                        <ExternalLink size={14} /> {hospital.website.replace('https://', '')}
-                      </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })()}
             </div>
           </motion.div>
 
@@ -122,11 +134,9 @@ export default function Contact() {
 
             {/* Hospital Logos */}
             <div className="grid grid-cols-2 gap-6">
-              {HOSPITALS.map(hospital => (
-                <div key={hospital.id} className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-4 flex items-center justify-center">
-                  <img src={hospitalLogos[hospital.id]} alt={hospital.name} className="max-h-full max-w-full object-contain" />
-                </div>
-              ))}
+              <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-4 flex items-center justify-center">
+                <img src={logoHMC} alt="Hospital São Marcelino Champagnat" className="max-h-full max-w-full object-contain" />
+              </div>
               <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 flex items-center justify-center overflow-hidden">
                 <img
                   src={logoCM}

@@ -1,10 +1,20 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Heart, Activity, Clock, Monitor } from 'lucide-react';
+import { ArrowRight, Heart, Activity, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroImg from '../assets/images/foto para hero2.jpeg';
 import secondSectionImg from '../assets/images/WhatsApp Image 2026-03-03 at 14.10.59.jpeg';
 import logoBordo from '../assets/logos/logo-bordo.png';
-import { CONSULTORIO, HOSPITALS, TELECONSULTA_WA } from '../data/locations';
+import carimboBranco from '../assets/logos/carimbo-branco.png';
+import logoHMC from '../assets/Logo hospitais/logo_horiz_color-1024x343.png';
+import logoHUC from '../assets/Logo hospitais/2c446ea1-1830-4f46-bf4e-6644feb5bfb3-cajuru.png';
+import logoHUEM from '../assets/Logo hospitais/images-2.png';
+import { HOSPITALS, TELECONSULTA_WA } from '../data/locations';
+
+const hospitalLogos: Record<string, string> = {
+  hmc: logoHMC,
+  huc: logoHUC,
+  huem: logoHUEM,
+};
 
 export default function Home() {
   return (
@@ -51,7 +61,8 @@ export default function Home() {
                   do coração
                 </h1>
                 <p className="text-lg text-grafite/70 mb-12 leading-relaxed max-w-lg font-light">
-                  Ciência para tratar, sensibilidade para cuidar. Tenha uma especialista ao seu lado!
+                  Ciência para tratar, sensibilidade para cuidar.<br />
+                  Tenha uma especialista ao seu lado!
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6">
@@ -280,57 +291,37 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-5xl font-serif mb-8 leading-tight text-white">
-              Onde Atendo
+              Onde Trabalho
             </h2>
             <div className="w-20 h-[1px] bg-white/30 mx-auto"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-6 gap-8 lg:gap-6 mb-20">
-            {/* Consultório — col-span-2 (linha 1) */}
-            <div className="md:col-span-2 bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors min-h-[220px]">
-              <h3 className="text-xl font-serif mb-4 text-champagne">{CONSULTORIO.name}</h3>
-              <p className="text-white/80 font-light text-sm leading-relaxed mb-4">
-                {CONSULTORIO.street}<br />
-                {CONSULTORIO.city}<br />
-                {CONSULTORIO.cep}
-              </p>
-              <div className="text-sm text-white/90 font-medium">
-                <a href={CONSULTORIO.phoneTel} className="block hover:text-champagne transition-colors mb-1">Tel: {CONSULTORIO.phone}</a>
-                <a href={CONSULTORIO.whatsappUrl} target="_blank" rel="noopener noreferrer" className="block hover:text-champagne transition-colors">WhatsApp: {CONSULTORIO.whatsappPhone}</a>
-              </div>
+            {/* Consultório — linha 1, col-span-3 */}
+            <div className="md:col-span-3 bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors flex flex-col items-center justify-center min-h-[180px] gap-4">
+              <p className="text-xs font-medium uppercase tracking-widest text-champagne/70">Consultório Particular</p>
+              <Link to="/contato">
+                <img src={carimboBranco} alt="Consultório Dra. Carolina Montenegro" className="max-h-16 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity" />
+              </Link>
             </div>
 
-            {/* Hospitals — índice 0 e 1: col-span-2 (linha 1); índice 2: col-span-3 (linha 2) */}
-            {HOSPITALS.map((hospital, idx) => (
-              <div key={hospital.id} className={`${idx < 2 ? 'md:col-span-2' : 'md:col-span-3'} bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors min-h-[220px]`}>
-                <h3 className="text-xl font-serif mb-4 text-champagne">{hospital.name}</h3>
-                <p className="text-white/80 font-light text-sm leading-relaxed mb-4">
-                  {hospital.street}<br />
-                  {hospital.city}<br />
-                  {hospital.cep}
-                </p>
-                <div className="text-sm text-white/90 font-medium flex flex-col gap-1">
-                  {hospital.showPhone && (
-                    <a href={hospital.phoneTel} className="hover:text-champagne transition-colors">Tel: {hospital.phone}</a>
-                  )}
-                  <a href={hospital.website} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-champagne transition-colors font-light text-sm break-all">{hospital.website.replace('https://', '')}</a>
-                </div>
+            {/* Teleconsulta — linha 1, col-span-3 */}
+            <div className="md:col-span-3 bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors flex flex-col items-center justify-center min-h-[180px] gap-4">
+              <p className="text-xs font-medium uppercase tracking-widest text-champagne/70">Teleconsulta</p>
+              <a href={TELECONSULTA_WA.whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <img src={carimboBranco} alt="Teleconsulta Dra. Carolina Montenegro" className="max-h-16 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity" />
+              </a>
+            </div>
+
+            {/* Hospitals — linha 2, col-span-2 cada */}
+            {HOSPITALS.map((hospital) => (
+              <div key={hospital.id} className="md:col-span-2 bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors flex flex-col items-center justify-center min-h-[180px] gap-4">
+                <p className="text-xs font-medium uppercase tracking-widest text-champagne/70 text-center">{hospital.name}</p>
+                <a href={hospital.website} target="_blank" rel="noopener noreferrer" className="bg-white rounded-lg px-4 py-3 hover:shadow-lg transition-shadow">
+                  <img src={hospitalLogos[hospital.id]} alt={hospital.name} className="max-h-10 max-w-[120px] object-contain" />
+                </a>
               </div>
             ))}
-
-            {/* Teleconsulta — col-span-3 (linha 2) */}
-            <div className="md:col-span-3 bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors min-h-[220px]">
-              <div className="flex items-center gap-3 mb-4">
-                <Monitor className="w-5 h-5 text-champagne shrink-0" />
-                <h3 className="text-xl font-serif text-champagne">Teleconsulta</h3>
-              </div>
-              <p className="text-white/80 font-light text-sm leading-relaxed mb-4">
-                Atendimento por teleconsulta para pacientes do Brasil e exterior.
-              </p>
-              <div className="text-sm text-white/90 font-medium">
-                <a href={TELECONSULTA_WA.whatsappUrl} target="_blank" rel="noopener noreferrer" className="block hover:text-champagne transition-colors">WhatsApp: {TELECONSULTA_WA.phone}</a>
-              </div>
-            </div>
           </div>
 
           <div className="text-center">
