@@ -299,26 +299,26 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-6 gap-8 lg:gap-6 mb-20">
             {/* Consultório — linha 1, col-span-3 */}
             <div className="md:col-span-3 bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors flex flex-col items-center justify-center min-h-[180px] gap-4">
-              <p className="text-xs font-medium uppercase tracking-widest text-champagne/70">Consultório Particular</p>
+              <p className="text-sm font-medium uppercase tracking-widest text-champagne/90">Consultório Particular</p>
               <Link to="/contato">
-                <img src={carimboBranco} alt="Consultório Dra. Carolina Montenegro" className="max-h-16 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity" />
+                <img src={carimboBranco} alt="Consultório Dra. Carolina Montenegro" className="max-h-20 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity" />
               </Link>
             </div>
 
             {/* Teleconsulta — linha 1, col-span-3 */}
             <div className="md:col-span-3 bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors flex flex-col items-center justify-center min-h-[180px] gap-4">
-              <p className="text-xs font-medium uppercase tracking-widest text-champagne/70">Teleconsulta</p>
+              <p className="text-sm font-medium uppercase tracking-widest text-champagne/90">Teleconsulta</p>
               <a href={TELECONSULTA_WA.whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <img src={carimboBranco} alt="Teleconsulta Dra. Carolina Montenegro" className="max-h-16 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity" />
+                <img src={carimboBranco} alt="Teleconsulta Dra. Carolina Montenegro" className="max-h-20 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity" />
               </a>
             </div>
 
             {/* Hospitals — linha 2, col-span-2 cada */}
             {HOSPITALS.map((hospital) => (
               <div key={hospital.id} className="md:col-span-2 bg-white/5 p-8 rounded-lg border border-white/10 hover:bg-white/10 transition-colors flex flex-col items-center justify-center min-h-[180px] gap-4">
-                <p className="text-xs font-medium uppercase tracking-widest text-champagne/70 text-center">{hospital.name}</p>
+                <p className="text-sm font-medium uppercase tracking-widest text-champagne/90 text-center">{hospital.name}</p>
                 <a href={hospital.website} target="_blank" rel="noopener noreferrer" className="bg-white rounded-lg px-4 py-3 hover:shadow-lg transition-shadow">
-                  <img src={hospitalLogos[hospital.id]} alt={hospital.name} className="max-h-10 max-w-[120px] object-contain" />
+                  <img src={hospitalLogos[hospital.id]} alt={hospital.name} className="max-h-14 max-w-[160px] object-contain" />
                 </a>
               </div>
             ))}

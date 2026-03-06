@@ -1,8 +1,7 @@
 import { motion } from 'motion/react';
 import { Phone, MapPin, ExternalLink } from 'lucide-react';
 import photoContact from '../assets/images/foto para sobre.jpeg';
-import logoHMC from '../assets/Logo hospitais/logo_horiz_color-1024x343.png';
-import logoCM from '../assets/logos/logo-bordo.png';
+import carimboBranco from '../assets/logos/carimbo-branco.png';
 import { CONSULTORIO, HOSPITALS, TELECONSULTA_WA } from '../data/locations';
 
 function WhatsAppIcon({ size = 16 }: { size?: number }) {
@@ -26,7 +25,7 @@ export default function Contact() {
           >
             <h1 className="text-4xl md:text-5xl font-serif text-bordo mb-8">Agende sua consulta!</h1>
             <p className="text-lg text-grafite/70 mb-16 leading-relaxed font-light">
-              Estamos à disposição para agendar sua consulta ou esclarecer dúvidas. Confira abaixo nossos locais de atendimento e canais diretos.
+              Estou à disposição para agendar sua consulta ou esclarecer dúvidas. Confira abaixo meus locais de atendimento e canais diretos.
             </p>
 
             <div className="space-y-10">
@@ -65,7 +64,7 @@ export default function Contact() {
                     <div>
                       <h3 className="text-xl font-serif text-grafite mb-3">Teleconsultas</h3>
                       <p className="text-grafite/70 font-light leading-relaxed mb-2">
-                        Atendimento online para todo o Brasil.
+                        Atendimento online para todo o Brasil e exterior.
                       </p>
                       <div className="flex flex-col gap-1 text-grafite/80 font-medium mt-3">
                         <a href={TELECONSULTA_WA.whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-bordo transition-colors">
@@ -129,19 +128,11 @@ export default function Contact() {
               <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-bordo/95 via-bordo/60 to-transparent p-8 flex flex-col justify-end">
                 <p className="text-white font-serif text-xl">Dra. Carolina Montenegro</p>
                 <p className="text-white/80 text-sm uppercase tracking-widest">Cardiologista</p>
-              </div>
-            </div>
-
-            {/* Hospital Logos */}
-            <div className="grid grid-cols-2 gap-6">
-              <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 md:p-4 flex items-center justify-center">
-                <img src={logoHMC} alt="Hospital São Marcelino Champagnat" className="max-h-full max-w-full object-contain" />
-              </div>
-              <div className="h-20 md:h-24 bg-white border border-pearl hover:border-bordo/30 transition-colors rounded p-3 flex items-center justify-center overflow-hidden">
                 <img
-                  src={logoCM}
-                  alt="Consultório Dra. Carolina Montenegro"
-                  className="h-[80%] w-auto object-contain"
+                  src={carimboBranco}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute bottom-6 right-6 h-16 w-auto object-contain opacity-80"
                 />
               </div>
             </div>

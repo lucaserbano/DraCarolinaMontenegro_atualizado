@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Instagram, Phone, MapPin } from 'lucide-react';
+import { Menu, X, Instagram, Phone, MapPin, Mail } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import logoBordoHorizontal from '../assets/logos/logo-bordo-horizontal.png';
 import carimboBranco from '../assets/logos/carimbo-branco.png';
@@ -196,11 +196,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <p className="text-sm text-pearl/80 font-light mb-4">
                 Segunda–Sexta, das 9h às 18h
               </p>
-              <div className="text-sm text-pearl/80 font-light mb-8">
-                <p className="font-medium text-white mb-1">Teleconsulta</p>
-                <a href={TELECONSULTA_WA.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-champagne transition-colors">{TELECONSULTA_WA.phone}</a>
-              </div>
-
               <h4 className="font-serif text-xl font-semibold text-white mb-4 tracking-wide">Redes Sociais</h4>
               <div className="flex flex-col gap-4">
                 <a href="https://www.instagram.com/dra.carolinamontenegro/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-pearl hover:text-white transition-colors group">
@@ -208,6 +203,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     <Instagram size={20} />
                   </span>
                   <span>Instagram</span>
+                </a>
+                <a href="mailto:carolina.omontenegro@gmail.com" className="flex items-center gap-3 text-pearl hover:text-white transition-colors group">
+                  <span className="w-10 h-10 rounded-full border border-pearl/20 flex items-center justify-center group-hover:bg-white group-hover:text-bordo group-hover:border-white transition-all duration-300">
+                    <Mail size={20} />
+                  </span>
+                  <span>E-mail</span>
                 </a>
                 <a href="http://lattes.cnpq.br/0656857519859758" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-pearl hover:text-white transition-colors group">
                   <span className="w-10 h-10 rounded-full border border-pearl/20 flex items-center justify-center group-hover:bg-white group-hover:text-bordo group-hover:border-white transition-all duration-300 text-xs font-serif font-bold">
