@@ -103,6 +103,84 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Missão, Visão e Valores */}
+      <section className="py-40 lg:py-48 bg-offwhite relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-4xl font-serif text-bordo mb-6">Missão, Visão e Valores</h2>
+            <div className="w-16 h-[1px] bg-champagne mx-auto"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Missão — card claro */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0 }}
+              className="bg-white border border-pearl rounded-xl p-10 flex flex-col gap-6"
+            >
+              <div className="w-12 h-12 rounded-full border border-bordo/20 flex items-center justify-center">
+                <Heart className="w-5 h-5 text-bordo" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-serif text-grafite mb-4">Missão</h3>
+                <p className="text-grafite/70 font-light leading-relaxed">
+                  Oferecer às pessoas o cuidado cardiológico que elas merecem: preciso, humano e baseado no que existe de mais avançado na medicina. Minha missão é estar ao lado de cada paciente, lutando pela sua vida e pelo seu bem-estar, em cada etapa da jornada.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Valores — card escuro, ocupa 2 linhas */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-bordo rounded-xl p-10 flex flex-col gap-6 md:row-span-2"
+            >
+              <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
+                <Activity className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-serif text-white mb-6">Valores</h3>
+                <ul className="space-y-6">
+                  {[
+                    { title: 'Excelência técnica', desc: 'Busco o melhor conhecimento disponível para oferecer o melhor cuidado possível. Formação contínua não é diferencial, é obrigação.' },
+                    { title: 'Transparência', desc: 'Acredito que o paciente bem informado é um paciente mais seguro. Explico cada etapa do tratamento com clareza, sem jargões desnecessários.' },
+                    { title: 'Individualização', desc: 'Cada paciente é único. O cuidado que ofereço é adaptado à história, à realidade e aos objetivos de cada pessoa.' },
+                    { title: 'Humanização', desc: 'Por trás de cada diagnóstico há uma pessoa, uma família, uma história. Considero sempre o ser humano inteiro, não apenas o coração.' },
+                  ].map((v, i) => (
+                    <li key={i} className="text-white/90 font-light leading-relaxed text-sm">
+                      <span className="font-semibold text-champagne">{v.title}</span> — {v.desc}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Visão — card escuro */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-bordo/10 border border-bordo/15 rounded-xl p-10 flex flex-col gap-6"
+            >
+              <div className="w-12 h-12 rounded-full border border-bordo/20 flex items-center justify-center">
+                <Clock className="w-5 h-5 text-bordo" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-serif text-bordo mb-4">Visão</h3>
+                <p className="text-grafite/70 font-light leading-relaxed">
+                  Ser reconhecida como cardiologista de referência em Curitiba. Quero construir uma prática em que cada paciente encontre cuidado especializado e de excelência, e na qual a busca pelo melhor tratamento nunca seja negociável.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Specialties / Features */}
       <section className="py-40 lg:py-48 bg-offwhite relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
