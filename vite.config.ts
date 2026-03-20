@@ -5,7 +5,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    base: '/DraCarolinaMontenegro_atualizado/',
+    base: '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
