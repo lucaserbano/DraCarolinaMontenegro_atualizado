@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lucaserbano.github.io/DraCarolinaMontenegro_atualizado/sitemap.xml
+Sitemap: https://carolinamontenegro.com.br/sitemap.xml
