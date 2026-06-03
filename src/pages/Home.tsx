@@ -20,20 +20,20 @@ export default function Home() {
   return (
     <div className="bg-offwhite">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden py-24 lg:py-32 bg-offwhite">
+      <section className="relative min-h-[90vh] flex flex-col md:flex-row md:items-center overflow-hidden pt-0 pb-16 md:py-24 lg:py-32 bg-offwhite">
         {/* Imagem de fundo à direita — surge suavemente da esquerda para a direita */}
         <motion.div
           initial={{ opacity: 0, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className="absolute inset-y-0 right-0 w-[78%] sm:w-[68%] md:w-[58%] z-0 pointer-events-none"
+          className="relative w-full h-[40vh] shrink-0 md:absolute md:inset-y-0 md:right-0 md:h-full md:w-[58%] z-0 pointer-events-none"
         >
           <img
             src={heroImg}
             alt="Dra. Carolina Montenegro"
-            className="w-full h-full object-cover object-[center_20%]"
+            className="w-full h-full object-cover object-[center_38%] md:object-[center_20%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-offwhite/40 to-offwhite md:via-offwhite/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-offwhite via-offwhite/30 to-transparent md:bg-gradient-to-l md:from-transparent md:via-offwhite/30 md:to-offwhite"></div>
         </motion.div>
         {/* Noise texture */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg">
@@ -53,24 +53,24 @@ export default function Home() {
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mt-8 md:mt-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 lg:gap-24 items-center">
-            <div className="max-w-[62%] sm:max-w-md md:max-w-2xl drop-shadow-[0_0_18px_rgba(250,249,246,0.95)] md:drop-shadow-none">
+            <div className="max-w-2xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="inline-block py-1 px-3 rounded-full bg-bordo/5 text-bordo text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-6 md:mb-8 border border-bordo/10">
+                <span className="inline-block py-1 px-3 rounded-full bg-bordo/5 text-bordo text-xs font-bold tracking-widest uppercase mb-8 border border-bordo/10">
                   Insuficiência Cardíaca e Transplante
                 </span>
-                <h1 className="text-3xl sm:text-5xl md:text-7xl font-serif font-medium text-bordo leading-[1.1] mb-6 md:mb-8">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl font-serif font-medium text-bordo leading-[1.1] mb-8">
                   Experiência para <br />
                   <span className="text-grafite">casos complexos</span> <br />
                   do coração
                 </h1>
-                <p className="text-base md:text-lg text-grafite/70 mb-8 md:mb-12 leading-relaxed max-w-lg font-light">
-                  Ciência para tratar, sensibilidade para cuidar.<br />
+                <p className="text-lg text-grafite/70 mb-12 leading-relaxed max-w-lg font-light">
+                  Ciência para tratar,<br className="sm:hidden" /> sensibilidade para cuidar.<br />
                   Tenha uma especialista ao seu lado!
                 </p>
 
