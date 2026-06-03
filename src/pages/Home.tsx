@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Heart, Activity, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import heroImg from '../assets/images/foto para hero2.jpeg';
+import heroImg from '../assets/images/Ensaio Carolina de Oliveira Montenegro-49.jpg';
 import secondSectionImg from '../assets/images/WhatsApp Image 2026-03-03 at 14.10.59.jpeg';
 import logoBordo from '../assets/logos/logo-bordo.png';
 import carimboBranco from '../assets/logos/carimbo-branco.png';
@@ -21,11 +21,20 @@ export default function Home() {
     <div className="bg-offwhite">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden py-24 lg:py-32 bg-offwhite">
-        {/* Painel direito — toque de cor suave */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute inset-y-0 right-0 w-[55%] bg-gradient-to-l from-pearl/30 via-pearl/10 to-transparent"></div>
-          <div className="absolute inset-y-0 right-[44.5%] w-[1px] bg-gradient-to-b from-transparent via-bordo/8 to-transparent hidden lg:block"></div>
-        </div>
+        {/* Imagem de fundo à direita — surge suavemente da esquerda para a direita */}
+        <motion.div
+          initial={{ opacity: 0, scale: 1.04 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="absolute inset-y-0 right-0 w-[78%] sm:w-[68%] md:w-[58%] z-0 pointer-events-none"
+        >
+          <img
+            src={heroImg}
+            alt="Dra. Carolina Montenegro"
+            className="w-full h-full object-cover object-[center_20%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-offwhite/40 to-offwhite md:via-offwhite/30"></div>
+        </motion.div>
         {/* Noise texture */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg">
           <filter id="hero-noise">
@@ -34,33 +43,33 @@ export default function Home() {
           </filter>
           <rect width="100%" height="100%" filter="url(#hero-noise)"/>
         </svg>
-        {/* Logo watermark */}
-        <div className="absolute inset-0 z-0 flex items-center justify-end pr-8 pointer-events-none">
+        {/* Logo watermark — lado esquerdo */}
+        <div className="absolute inset-0 z-0 flex items-center justify-start pl-8 pointer-events-none">
           <img
             src={logoBordo}
             alt=""
             aria-hidden="true"
-            className="h-[85%] w-auto object-contain opacity-[0.03] select-none"
+            className="h-[85%] w-auto object-contain opacity-[0.02] select-none"
           />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 lg:gap-24 items-center">
-            <div className="max-w-2xl">
+            <div className="max-w-[62%] sm:max-w-md md:max-w-2xl drop-shadow-[0_0_18px_rgba(250,249,246,0.95)] md:drop-shadow-none">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="inline-block py-1 px-3 rounded-full bg-bordo/5 text-bordo text-xs font-bold tracking-widest uppercase mb-8 border border-bordo/10">
+                <span className="inline-block py-1 px-3 rounded-full bg-bordo/5 text-bordo text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-6 md:mb-8 border border-bordo/10">
                   Insuficiência Cardíaca e Transplante
                 </span>
-                <h1 className="text-5xl sm:text-6xl md:text-7xl font-serif font-medium text-bordo leading-[1.1] mb-8">
+                <h1 className="text-3xl sm:text-5xl md:text-7xl font-serif font-medium text-bordo leading-[1.1] mb-6 md:mb-8">
                   Experiência para <br />
                   <span className="text-grafite">casos complexos</span> <br />
                   do coração
                 </h1>
-                <p className="text-lg text-grafite/70 mb-12 leading-relaxed max-w-lg font-light">
+                <p className="text-base md:text-lg text-grafite/70 mb-8 md:mb-12 leading-relaxed max-w-lg font-light">
                   Ciência para tratar, sensibilidade para cuidar.<br />
                   Tenha uma especialista ao seu lado!
                 </p>
@@ -84,24 +93,8 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Hero Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative hidden lg:block"
-            >
-              <div className="relative z-10 rounded-tl-[100px] rounded-br-[100px] overflow-hidden shadow-xl border-4 border-white/60 aspect-[3/4] w-full max-w-2xl mx-auto">
-                <img
-                  src={heroImg}
-                  alt="Dra. Carolina Montenegro"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute -bottom-12 -right-12 w-96 h-96 bg-champagne/30 rounded-full blur-3xl -z-10"></div>
-              <div className="absolute -top-12 -left-12 w-96 h-96 bg-pearl/40 rounded-full blur-3xl -z-10"></div>
-            </motion.div>
+            {/* Coluna direita reservada para a imagem de fundo */}
+            <div className="hidden lg:block" aria-hidden="true"></div>
           </div>
         </div>
       </section>
@@ -261,18 +254,18 @@ export default function Home() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white p-12 rounded-xl shadow-sm border border-pearl hover:border-champagne/50 transition-all duration-300 group"
               >
-                <div className="w-14 h-14 bg-offwhite rounded-full flex items-center justify-center mb-8 group-hover:bg-bordo/5 transition-colors">
-                  {feature.icon}
+                <div className="bg-white p-12 rounded-xl shadow-sm border border-pearl hover:border-champagne/50 hover:-translate-y-1.5 transition-all duration-300 group h-full">
+                  <div className="w-14 h-14 bg-offwhite rounded-full flex items-center justify-center mb-8 group-hover:bg-bordo/5 transition-colors">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-serif text-grafite mb-6 group-hover:text-bordo transition-colors">{feature.title}</h3>
+                  <p className="text-grafite/60 leading-relaxed font-light text-sm">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-serif text-grafite mb-6 group-hover:text-bordo transition-colors">{feature.title}</h3>
-                <p className="text-grafite/60 leading-relaxed font-light text-sm">
-                  {feature.description}
-                </p>
               </motion.div>
             ))}
           </div>

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { TELECONSULTA_WA } from '../data/locations';
 import { motion } from 'motion/react';
-import { Heart, Activity, ChevronDown, ChevronUp, Stethoscope, ClipboardCheck, Cpu, UserCheck } from 'lucide-react';
+import { Heart, Activity, ChevronDown, ChevronUp, Stethoscope, ClipboardCheck, Cpu, HeartPulse } from 'lucide-react';
 import logoBordo from '../assets/logos/logo-bordo.png';
+import faqPhoto from '../assets/images/Ensaio Carolina de Oliveira Montenegro-5.jpg';
 
 export default function Services() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -72,9 +73,9 @@ export default function Services() {
       description: "Avaliação de risco cardiovascular personalizada para prevenção de eventos como infarto e AVC."
     },
     {
-      icon: <UserCheck size={32} />,
-      title: "Acompanhamento Pós-procedimento",
-      description: "Acompanhamento clínico rigoroso após procedimentos cardíacos e cirurgias, garantindo a melhor recuperação."
+      icon: <HeartPulse size={32} />,
+      title: "Miocardiopatias e Doenças Cardíacas Raras",
+      description: "Avaliação especializada de doenças do músculo cardíaco, como amiloidose cardíaca, doença de Fabry, cardiomiopatia hipertrófica e outras condições que podem causar insuficiência cardíaca e arritmias."
     },
     {
       icon: <Cpu size={32} />,
@@ -153,7 +154,7 @@ export default function Services() {
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-serif text-bordo mb-4">{service.title}</h3>
-                <p className="text-grafite/70 leading-relaxed font-light text-justify">
+                <p className="text-grafite/70 leading-relaxed font-light text-left">
                   {service.description}
                 </p>
               </motion.div>
@@ -163,22 +164,42 @@ export default function Services() {
         </div>
       </div>
 
+      {/* Foto acima das Dúvidas Frequentes — visível no mobile (no desktop ela é o fundo à direita) */}
+      <div className="md:hidden w-full h-72 overflow-hidden">
+        <img
+          src={faqPhoto}
+          alt="Dra. Carolina Montenegro"
+          className="w-full h-full object-cover object-[center_80%]"
+        />
+      </div>
+
       {/* FAQ Section */}
       <div className="relative overflow-hidden py-24">
-        {/* Logo marca d'água */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+        {/* Imagem de fundo à direita — surge suavemente da esquerda para a direita */}
+        <div className="absolute inset-y-0 right-0 w-full md:w-[55%] z-0 pointer-events-none hidden md:block">
+          <img
+            src={faqPhoto}
+            alt="Dra. Carolina Montenegro"
+            className="w-full h-full object-cover object-[center_85%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/40 to-white"></div>
+        </div>
+        {/* Logo marca d'água — atrás da coluna de dúvidas (esquerda) */}
+        <div className="absolute inset-0 z-0 flex items-center justify-start pl-8 pointer-events-none">
           <img
             src={logoBordo}
             alt=""
             aria-hidden="true"
-            className="h-[85%] w-auto object-contain opacity-[0.03] select-none"
+            className="h-[85%] w-auto object-contain opacity-[0.015] select-none"
           />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        {/* Coluna esquerda — dúvidas */}
+        <div className="lg:col-span-7">
+          <div className="mb-16 text-center lg:text-left">
             <h2 className="text-3xl font-serif text-bordo mb-6">Dúvidas Frequentes</h2>
-            <div className="w-16 h-[1px] bg-champagne mx-auto"></div>
+            <div className="w-16 h-[1px] bg-champagne mx-auto lg:mx-0"></div>
           </div>
 
           <div className="space-y-6">
@@ -216,6 +237,7 @@ export default function Services() {
               </motion.div>
             ))}
           </div>
+        </div>
         </div>
         </div>
       </div>

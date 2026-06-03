@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
 import { GraduationCap, Award, Globe, BookOpen } from 'lucide-react';
 import aboutImg from '../assets/images/foto dallas.jpeg';
+import aboutPhoto1 from '../assets/images/Ensaio Carolina de Oliveira Montenegro-15.jpg';
+import aboutPhoto2 from '../assets/images/Ensaio Carolina de Oliveira Montenegro-19.jpg';
 import logoPattern from '../assets/logos/logo-bordo.png';
 
 export default function About() {
@@ -129,6 +131,21 @@ export default function About() {
       </div>
       </div>
 
+      {/* Foto de destaque — plano de fundo de toda a seção */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="relative w-full h-[34vh] md:h-[44vh] overflow-hidden"
+      >
+        <img
+          src={aboutPhoto1}
+          alt="Dra. Carolina Montenegro"
+          className="absolute inset-0 w-full h-full object-cover object-[center_28%]"
+        />
+      </motion.div>
+
       {/* Timeline / Education */}
       <div className="relative py-16 bg-gradient-to-br from-offwhite via-white to-champagne/20 overflow-hidden">
         <div
@@ -140,37 +157,60 @@ export default function About() {
             backgroundRepeat: 'repeat'
           }}
         ></div>
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-          <h2 className="text-3xl font-serif text-bordo mb-16 text-center">Formação Acadêmica</h2>
-
-          <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-champagne before:to-transparent">
-            {education.map((item, index) => (
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start lg:items-center">
+            {/* Coluna esquerda — foto */}
+            <div className="lg:col-span-5">
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
               >
-                {/* Icon */}
-                <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-champagne bg-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                  {index === 0 ? <Award size={20} className="text-bordo" /> : <GraduationCap size={20} className="text-grafite/60" />}
-                </div>
-
-                {/* Content */}
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-lg shadow-sm border border-pearl hover:border-champagne/50 transition-all duration-300">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-bold text-bordo font-serif">{item.year}</span>
-                  </div>
-                  <h3 className="text-lg font-bold text-grafite mb-1">{item.title}</h3>
-                  <div className="text-sm font-medium text-grafite/60 mb-3 uppercase tracking-wide">{item.institution}</div>
-                  <p className="text-grafite/70 font-light text-sm leading-relaxed">
-                    {item.desc}
-                  </p>
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl border border-pearl bg-white">
+                  <img
+                    src={aboutPhoto2}
+                    alt="Dra. Carolina Montenegro"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </motion.div>
-            ))}
+            </div>
+
+            {/* Coluna direita — título + linha do tempo */}
+            <div className="lg:col-span-7">
+              <h2 className="text-3xl font-serif text-bordo mb-16 text-center lg:text-left">Formação Acadêmica</h2>
+
+              <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-champagne before:to-transparent">
+                {education.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="relative flex items-center gap-6 group is-active"
+                  >
+                    {/* Icon */}
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-champagne bg-white shadow shrink-0 z-10">
+                      {index === 0 ? <Award size={20} className="text-bordo" /> : <GraduationCap size={20} className="text-grafite/60" />}
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 bg-white p-6 rounded-lg shadow-sm border border-pearl hover:border-champagne/50 transition-all duration-300">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-bold text-bordo font-serif">{item.year}</span>
+                      </div>
+                      <h3 className="text-lg font-bold text-grafite mb-1">{item.title}</h3>
+                      <div className="text-sm font-medium text-grafite/60 mb-3 uppercase tracking-wide">{item.institution}</div>
+                      <p className="text-grafite/70 font-light text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Phone, MapPin, ExternalLink } from 'lucide-react';
-import photoContact from '../assets/images/foto para sobre.jpeg';
+import photoContact from '../assets/images/Ensaio Carolina de Oliveira Montenegro-36.jpg';
 import carimboBranco from '../assets/logos/carimbo-branco.png';
 import { CONSULTORIO, HOSPITALS, TELECONSULTA_WA } from '../data/locations';
 
@@ -15,7 +15,7 @@ function WhatsAppIcon({ size = 16 }: { size?: number }) {
 export default function Contact() {
   return (
     <div className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 md:pb-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           {/* Contact Info */}
           <motion.div
@@ -145,7 +145,7 @@ export default function Contact() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-bordo leading-relaxed italic max-w-3xl mx-auto mb-4">
             "Todo coração merece ser mais forte!"
           </h2>
-          <p className="text-lg md:text-xl font-serif text-grafite/50 italic font-light">
+          <p className="text-lg text-grafite/70 leading-relaxed font-light">
             Aguardo sua visita para melhorar a sua saúde e bem-estar.
           </p>
         </div>
